@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html layout:decorate="~{template}">
+<head>
+<meta charset="UTF-8">
+<title>Peça Já! - Lista de Solicitações</title>
+</head>
+<body>
+
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<section layout:fragment="content">
+
+		<!-- Breadcrumb -->
+		<div class="breadcrumb-holder">
+			<div class="">
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+					<li class="breadcrumb-item active">Revendedores</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="alert  alert-success"
+					th:if="${ not #strings.isEmpty(mensagem)}">
+					<span th:text="${mensagem}"></span>
+				</div>
+				<div class="alert  alert-error"
+					th:if="${ not #strings.isEmpty(mensagemErro)}">
+					<span th:text="${mensagemErro}"></span>
+				</div>
+			</div>
+			<div class="page-title">
+				<div class="title_left">
+					<h3>Revendedores</h3>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="x_panel">
+
+						<div class="x_title">
+							<h2>Lista de Revendedores</h2>
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i
+										class="fa fa-chevron-up"></i></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+
+						<br />
+
+						<div class="x_content">
+
+							<!-- Table -->
+							<div class="table-responsive">
+
+								<table id="datatable-buttons"
+									class="table table-striped table-bordered">
+									<thead>
+										<tr>
+											<th>Nome</th>
+											<th>CNPJ</th>
+											<th>Ações</th>
+										</tr>
+									</thead>
+
+									<tbody>
+										<tr th:each="u : ${users}">
+											<td th:text="${u.nome}"></td>
+											<td th:text="${u.cnpj}"></td>
+											<td>
+												<div align=center class="form-group">
+													<a
+														th:onclick="'loadModal(\'/revendedores/ajaxbydetalhes/\'+\'' + ${u.id} + '\');'"
+														class="btn btn-warning btn-sm"> <i class="fa fa-info"></i>
+														Detalhes
+													</a> <a id="confirme"
+														th:href="@{/revendedores/delete/{id}/(id=${u.id})}"
+														class="btn btn-danger btn-sm"> <i class="fa fa-remove"></i>
+														Remover
+													</a>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+
+								</table>
+
+							</div>
+							<!-- /Table -->
+							<!--Modal-->
+							<div class="modal fade" id="modalDetalhes" tabindex="-1"
+								role="dialog" aria-labelledby="exampleModalLabel"
+								aria-hidden="true"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!-- End Content -->
+
+
+</body>
+
+</html>
+

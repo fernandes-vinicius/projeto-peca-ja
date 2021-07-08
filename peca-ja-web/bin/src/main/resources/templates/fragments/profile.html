@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Profile</title>
+</head>
+<body>
+
+	<!-- Header -->
+	<div class="profile clearfix" th:fragment="profile">
+
+		<div class="profile_pic">
+			<a th:href="@{/home}"><img th:src="@{/img/img.jpg}"
+				alt="Profile Image" class="img-circle profile_img"></a>
+		</div>
+		<div class="profile_info">
+			<span th:text="#{template.menu.profile.welcome}"></span> <a
+				th:href="@{/home}">
+				<h2 th:text="${userLogged.nome}"></h2>
+			</a>
+			<div sec:authorize="hasAuthority('ROLE_ADM')">
+				<p>
+					<small>CPF: </small><small th:text="${userLogged.cpf}"></small>
+				</p>
+			</div>
+			<div sec:authorize="hasAuthority('ROLE_REVENDEDOR')">
+				<p>
+					<small>CNPJ: </small> <small th:text="${userLogged.cnpj}"></small>
+				</p>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+

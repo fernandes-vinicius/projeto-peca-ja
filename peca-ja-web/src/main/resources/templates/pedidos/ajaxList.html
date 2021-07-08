@@ -1,0 +1,77 @@
+<div th:if="${#lists.isEmpty(pedidos)}" align="center">
+	<h2>No momento não há pedidos</h2>
+</div>
+
+<div th:each="pedido : ${pedidos}">
+	<div class="col-md-4 col-sm-8 col-xs-12 profile_details">
+		<div class="well profile_view">
+			<div class="col-sm-12">
+
+				<h4 class="brief">
+					<div class="col-sm-6">
+						<strong><i>ID Pedido <i th:text=${pedido.id}></i></i></strong>
+					</div>
+					<div class="col-sm-6">
+						<i class="fa fa-clock-o"></i><strong th:text="' ' +${pedido.estimativa_entrega} + ' Minutos'"> </strong>
+					</div>
+				</h4>
+
+				<div class="left col-xs-7">
+					<ul class="list-unstyled">
+						<strong><li>Cliente:</li></strong>
+						<p th:text=${pedido.cliente.nome}></p>
+					</ul>
+					<ul class="list-unstyled">
+						<strong><li>Pediu:</li></strong>
+						<p class="ratings">
+							<small th:text=${pedido.quantidade}></small> <small
+								th:text=${pedido.produto.categoria.nome}></small>
+						</p>
+					</ul>
+					<ul class="list-unstyled">
+						<p class="ratings">
+							<i class="fa fa-map-marker"></i> <small
+								th:text="${pedido.cliente.endereco.rua}"></small>
+						</p>
+					</ul>
+
+
+				</div>
+				<div class="right col-xs-5 text-center">
+					<img th:src="@{/img/banner.png}" alt=""
+						class="img-circle img-responsive">
+				</div>
+
+			</div>
+			<div class="col-xs-12 bottom text-center">
+				<div class="col-xs-12 col-sm-12 emphasis">
+					<p class="ratings">
+						<strong>Avaliações</strong> <a>4.0</a> <a href="#"><span
+							class="fa fa-star"></span></a> <a href="#"><span
+							class="fa fa-star"></span></a> <a href="#"><span
+							class="fa fa-star"></span></a> <a href="#"><span
+							class="fa fa-star"></span></a> <a href="#"><span
+							class="fa fa-star-o"></span></a>
+					</p>
+				</div>
+
+				</br> </br> <a id=""
+					title="Clique aqui para saber mais informações do cliente"
+					th:href="@{/pedidos/detalhes/{id}/(id=${pedido.id})}"
+					class="btn btn-info btn-sm"> <i class="fa fa-info"></i>
+					Detalhar
+				</a> <a id="confirme"
+					title="Clique aqui para encaminhar o pedido ao cliente"
+					th:href="@{/pedidos/encaminhar/{id}/(id=${pedido.id})}"
+					class="btn btn-success btn-sm"> <i class="fa far fa-truck"></i>
+					Encaminhar
+				</a> </a> <a id="confirme"
+					title="Clique aqui para rejeitar o pedido do cliente"
+					th:href="@{/pedidos/formRejeitarPedido/{id}/(id=${pedido.id})}"
+					class="btn btn-danger btn-sm"> <i class="fa far fa-remove"></i>
+					Rejeitar
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

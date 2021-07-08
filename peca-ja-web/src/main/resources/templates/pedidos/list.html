@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html layout:decorate="~{template}">
+<head>
+<meta charset="UTF-8">
+<title>Peça Já! - Lista de pedidos</title>
+</head>
+<body>
+
+	<section layout:fragment="content">
+
+		<!-- Breadcrumb -->
+		<div class="breadcrumb-holder">
+			<div class="">
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+					<li class="breadcrumb-item active">Pedidos</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<!-- page content -->
+			<div role="main">
+				<div class="row">
+					<div class="alert  alert-success"
+						th:if="${ not #strings.isEmpty(mensagem)}">
+						<span th:text="${mensagem}"></span>
+					</div>
+					<div class="alert  alert-error"
+						th:if="${ not #strings.isEmpty(mensagemErro)}">
+						<span th:text="${mensagemErro}"></span>
+					</div>
+				</div>
+
+				<div class="page-title">
+					<div class="title_left">
+						<h3>Pedidos</h3>
+					</div>
+				</div>
+
+				<div class="clearfix"></div>
+
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+						<div class="x_panel">
+
+							<div class="x_title">
+								<h2>Pedidos aguardando encaminhamento</h2>
+								<ul class="nav navbar-right panel_toolbox">
+									<li><a class="collapse-link"><i
+											class="fa fa-chevron-up"></i></a></li>
+								</ul>
+								<div class="clearfix"></div>
+							</div>
+
+							<br />
+							<div class="x_content">
+
+								<div class="row" id="conteudoCards">
+
+									<div th:if="${#lists.isEmpty(pedidos)}" align="center">
+										<h2>No momento não há pedidos</h2>
+									</div>
+
+									<div th:each="pedido : ${pedidos}">
+
+										<div class="col-md-4 col-sm-8 col-xs-12 profile_details">
+											<div class="well profile_view">
+												<div class="col-sm-12">
+
+													<h4 class="brief">
+														<div class="col-sm-6">
+															<strong><i>ID Pedido <i th:text=${pedido.id}></i></strong>
+														</div>
+														<div class="col-sm-6">
+															<i class="fa fa-clock-o"></i><strong
+																th:text="' ' +${pedido.estimativa_entrega} + ' Minutos'">
+															</strong>
+														</div>
+													</h4>
+
+													<div class="left col-xs-8">
+														<ul class="list-unstyled">
+															<strong><li>Cliente:</li></strong>
+															<p th:text=${pedido.cliente.nome}></p>
+														</ul>
+														<ul class="list-unstyled">
+															<strong><li>Pediu:</li></strong>
+															<p class="ratings">
+																<small th:text=${pedido.quantidade}></small> <small
+																	th:text=${pedido.produto.categoria.nome}></small>
+															</p>
+														</ul>
+														<ul class="list-unstyled">
+															<p class="ratings">
+																<i class="fa fa-map-marker"></i> <small
+																	th:text="${pedido.cliente.endereco.rua}"></small>
+															</p>
+														</ul>
+
+													</div>
+													<div class="right col-xs-4 text-center">
+														<img th:src="@{/img/banner.png}" alt=""
+															class="img-circle img-responsive">
+													</div>
+
+												</div>
+												<div class="col-xs-12 bottom text-center">
+													<div class="col-xs-12 col-sm-12 emphasis">
+														<p class="ratings">
+															<strong>Avaliações</strong> <a>4.0</a> <a href="#"><span
+																class="fa fa-star"></span></a> <a href="#"><span
+																class="fa fa-star"></span></a> <a href="#"><span
+																class="fa fa-star"></span></a> <a href="#"><span
+																class="fa fa-star"></span></a> <a href="#"><span
+																class="fa fa-star-o"></span></a>
+														</p>
+													</div>
+
+													</br> </br> <a id=""
+														title="Clique aqui para saber mais informações do cliente"
+														th:href="@{/pedidos/detalhes/{id}/(id=${pedido.id})}"
+														class="btn btn-info btn-sm"> <i class="fa fa-info"></i>
+														Detalhar
+													</a> <a id="confirme"
+														title="Clique aqui para encaminhar o pedido ao cliente"
+														th:href="@{/pedidos/encaminhar/{id}/(id=${pedido.id})}"
+														class="btn btn-success btn-sm"> <i
+														class="fa far fa-truck"></i> Encaminhar
+													</a> </a> <a id="confirme"
+														title="Clique aqui para rejeitar o pedido do cliente"
+														th:href="@{/pedidos/formRejeitarPedido/{id}/(id=${pedido.id})}"
+														class="btn btn-danger btn-sm"> <i
+														class="fa far fa-remove"></i> Rejeitar
+													</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<th:block xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:fragment="end">
+
+		<!-- jQuery -->
+		<script th:src="@{/vendors/jquery/dist/jquery.min.js}">
+			
+		</script>
+		<!-- Bootstrap -->
+		<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+		<!-- FastClick -->
+
+		<!--Bootbox Scripts-->
+		<script th:src="@{/js/bootbox.min.js}"></script>
+		<script th:src="@{/js/modal-confirme.js}"></script>
+
+		<!-- Custom Theme Scripts -->
+		<script th:src="@{/js/custom.min.js}"></script>
+
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				setTime();
+				function setTime() {
+					setTimeout(setTime, 5000);
+					$.get("/pedidos/ajax/atualizarPedidos", function(data) {
+						$('#conteudoCards').html(data);
+					}, 'html');
+				}
+				;
+			});
+		</script>
+	</th:block>
+
+
+</body>
+</html>

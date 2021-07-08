@@ -1,0 +1,4 @@
+<option selected value="-1">Selecione uma Marca</option>
+<option th:each="marca : ${marcas}" th:value="${marca.id}"
+	th:text="${marca.nome}"></option>
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Profile</title>
+</head>
+<body>
+
+	<!-- Header -->
+	<div class="profile clearfix" th:fragment="profile">
+		<div class="profile_pic">
+			<a th:href="@{/home}"><img th:src="@{/img/user.png}"
+				alt="Profile Image" class="img-circle profile_img"></a>
+		</div>
+		<div class="profile_info">
+			<span th:text="#{template.menu.profile.welcome}"></span> <a
+				th:href="@{/home}">
+				<div sec:authorize="isAuthenticated()">
+					<h2 sec:authentication="name">Bob</h2>
+				</div>
+			</a>
+		</div>
+	</div>
+
+</body>
+</html>
+

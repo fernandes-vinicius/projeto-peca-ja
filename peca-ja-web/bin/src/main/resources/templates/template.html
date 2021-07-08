@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Peça Já! - Template</title>
+
+<!-- Favicon -->
+<link rel="shortcut icon" th:href="@{/img/favicon.ico}"
+	type="image/x-icon" />
+
+<!-- Bootstrap -->
+<link th:href="@{/vendors/bootstrap/dist/css/bootstrap.min.css}"
+	rel="stylesheet">
+	
+<!-- Font Awesome -->
+<link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet">
+
+<!-- NProgress -->
+<link th:href="@{/vendors/nprogress/nprogress.css}" rel="stylesheet" />
+
+<!-- iCheck -->
+<link th:href="@{/vendors/iCheck/skins/flat/green.css}" rel="stylesheet" />
+
+<!-- bootstrap-progressbar -->
+<link
+	th:href="@{/vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css}"
+	rel="stylesheet" />
+
+<!-- JQVMap -->
+<link th:href="@{/vendors/jqvmap/dist/jqvmap.min.css}" rel="stylesheet" />
+
+<!-- bootstrap-daterangepicker -->
+<link
+	th:href="@{/vendors/bootstrap-daterangepicker/daterangepicker.css}"
+	rel="stylesheet" />
+
+<!-- Custom Theme Style -->
+<link th:href="@{/css/custom.min.css}" rel="stylesheet" />
+
+<!-- Datatables Css -->
+<link
+	th:href="@{/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css}"
+	rel="stylesheet" />
+<link
+	th:href="@{/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css}"
+	rel="stylesheet" />
+
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a th:href="@{/home}" class="site_title"><i class="fa fa-paw"></i>
+							<span>Peça Já!</span></a>
+					</div>
+
+					<div class="clearfix"></div>
+
+					<!-- menu profile quick info -->
+					<div th:replace="fragments/profile :: profile">
+						<div>Profile</div>
+					</div>
+					<!-- /menu profile quick info -->
+
+					<br />
+
+					<!-- sidebar menu -->
+					<div th:replace="fragments/menu :: menu">
+						<div>Sidebar - Menu</div>
+					</div>
+					<!-- /sidebar menu -->
+
+				</div>
+			</div>
+
+			<!-- top navigation -->
+			<div th:replace="fragments/header :: header">
+				<div>Header</div>
+			</div>
+			<!-- /top navigation -->
+
+			<!-- Do Layout - Page Content -->
+			<section layout:fragment="content" class="right_col" role="main">
+				<div>Do Layout</div>
+			</section>
+			<!-- /page content -->
+
+			<!-- footer content -->
+			<footer th:replace="fragments/footer :: footer">
+				<div>Footer</div>
+			</footer>
+			<!-- /footer content -->
+		</div>
+	</div>
+
+	<!-- jQuery -->
+	<script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+	<!-- Bootstrap -->
+	<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+	<!-- FastClick -->
+	<script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
+	<!-- NProgress -->
+	<script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+	<!-- Chart.js -->
+	<script th:src="@{/vendors/Chart.js/dist/Chart.min.js}"></script>
+	<!-- gauge.js -->
+	<script th:src="@{/vendors/gauge.js/dist/gauge.min.js}"></script>
+	<!-- bootstrap-progressbar -->
+	<script
+		th:src="@{/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js}"></script>
+	<!-- iCheck -->
+	<script th:src="@{/vendors/iCheck/icheck.min.js}"></script>
+	<!-- Skycons -->
+	<script th:src="@{/vendors/skycons/skycons.js}"></script>
+	<!-- Flot -->
+	<script th:src="@{/vendors/Flot/jquery.flot.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.pie.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.time.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.stack.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.resize.js}"></script>
+	<!-- Flot plugins -->
+	<script th:src="@{/vendors/flot.orderbars/js/jquery.flot.orderBars.js}"></script>
+	<script th:src="@{/vendors/flot-spline/js/jquery.flot.spline.min.js}"></script>
+	<script th:src="@{/vendors/flot.curvedlines/curvedLines.js}"></script>
+	<!-- DateJS -->
+	<script th:src="@{/vendors/DateJS/build/date.js}"></script>
+	<!-- JQVMap -->
+	<script th:src="@{/vendors/jqvmap/dist/jquery.vmap.js}"></script>
+	<script th:src="@{/vendors/jqvmap/dist/maps/jquery.vmap.world.js}"></script>
+	<script
+		th:src="@{/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js}"></script>
+	<!-- bootstrap-daterangepicker -->
+	<script th:src="@{/vendors/moment/min/moment.min.js}"></script>
+	<script
+		th:src="@{/vendors/bootstrap-daterangepicker/daterangepicker.js}"></script>
+
+	<!-- validator -->
+	<script th:src="@{/vendors/validator/validator.js}"></script>
+
+	<!-- Datatable Js -->
+	<script th:src="@{/vendors/datatables.net/js/jquery.dataTables.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/dataTables.buttons.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/buttons.flash.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/buttons.html5.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/buttons.print.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-responsive/js/dataTables.responsive.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js}"></script>
+	<script
+		th:src="@{vendors/datatables.net-scroller/js/dataTables.scroller.min.js}"></script>
+	<script th:src="@{/vendors/jszip/dist/jszip.min.js}"></script>
+	<script th:src="@{/vendors/pdfmake/build/pdfmake.min.js}"></script>
+	<script th:src="@{/vendors/pdfmake/build/vfs_fonts.js}"></script>
+
+	<!-- Custom Theme Scripts -->
+	<script th:src="@{/js/custom.min.js}"></script>
+	<!-- Google Analytics -->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script',
+				'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-23581568-13', 'auto');
+		ga('send', 'pageview');
+	</script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		/* Precenher o select de marca de acordo com a categoria selecionada. exemplo: 
+		** Categoria agua, id = 2; faz um find pelo id nas marcas que o categoria_id e igual a 2 
+	    ** monta um modelAndViewl(ajaxbymarca) com a lisa de marcas e retorna com html
+	    ** o select[name='marca.id'] é substituido pelo que veio como resposta
+		*/ 
+		$("select[name='categoria.id']").change(function() {
+			var url = "/marcas/ajaxbymarca/" + $(this).val();
+			$.get(url, function(data) {
+				$("select[name='marca.id']").html(data).change();
+			}, 'html');
+		});
+		
+		/* Ajax para salvar uma nova marca
+		** retornando sucess ou error mostrando o alerta
+		*/
+		$('#marca-form').submit(function(e) {
+	        e.preventDefault();
+	        
+	        var formdata = {
+	        		categoria_id : $(".categoria_id").val(),
+	        		nome : $("#nome").val()
+	        }
+	        $.ajax({
+				type:'POST',
+				contentType : "application/json",
+				url:'/marcas/save',
+				data: JSON.stringify(formdata),
+				success:function(response) {
+			    	if(response == "200"){
+						$("#alert").
+				    	html('<div class="alert alert-success" role="alert">Marca salva com sucesso</div>');
+			    	}
+			    	if(response == "401"){
+			    		$("#alert").
+				    	html('<div class="alert alert-danger" role="alert">Selecione Uma Categria</div>');
+			    	}
+			    	if(response == "402"){
+			    		$("#alert").
+				    	html('<div class="alert alert-danger" role="alert">Essa marca ja existe</div>');
+			    	}
+			    },
+				error:function(response){
+					alert("ERRO");
+				}
+			});
+		});
+
+	});
+	</script>
+
+</body>
+</html>
+

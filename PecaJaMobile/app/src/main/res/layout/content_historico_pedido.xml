@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".HistoricoPedidoActivity"
+    tools:showIn="@layout/activity_historico_pedido"
+    android:orientation="vertical"
+    android:background="#E7F2F4">
+
+        <LinearLayout
+            android:padding="@dimen/content_padding"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Layout - Spinner Categoria -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RadioGroup
+                        android:id="@+id/radio_group_categoria"
+                        android:padding="@dimen/spinner_padding"
+                        android:checkedButton="@id/radio_btn_agua"
+                        android:layout_centerInParent="true"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Radio Button - Água -->
+                        <RadioButton
+                            android:id="@+id/radio_btn_agua"
+                            android:layout_marginRight="@dimen/spinner_margin_right"
+                            android:text="@string/text_radio_button_agua"
+                            android:textColor="@color/colorPrimary"
+                            android:buttonTint="@color/colorPrimary"
+                            android:textSize="@dimen/label_text_size"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <!-- End Radio Button - Água -->
+
+                        <!-- Radio Button - Água -->
+                        <RadioButton
+                            android:id="@+id/radio_btn_gas"
+                            android:text="@string/text_radio_button_gas"
+                            android:textColor="@color/colorPrimary"
+                            android:buttonTint="@color/colorPrimary"
+                            android:textSize="@dimen/label_text_size"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <!-- End Radio Button - Água -->
+
+                    </RadioGroup>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!-- End Layout - Spinner Categoria -->
+
+            <!-- Layout - ListView - Pedidos -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- ListView - Pedidos -->
+                <ListView
+                    android:id="@+id/listview_pedidos"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical"
+                    android:clipToPadding="false"
+                    android:dividerHeight="10dp"
+                    android:orientation="vertical"
+                    android:showDividers="middle"
+                    android:divider="@android:color/transparent"/>
+                <!-- End ListView - Pedidos -->
+
+            </LinearLayout>
+            <!-- End Layout - ListView - Pedidos -->
+
+        </LinearLayout>
+
+
+</LinearLayout>

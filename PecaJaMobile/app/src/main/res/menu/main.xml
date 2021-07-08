@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:title="Recarregar"
+        android:id="@+id/action_refresh"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_refresh_on_white_24dp"
+        app:showAsAction="always"/>
+
+    <item
+        android:title="Filtrar por"
+        android:id="@+id/action_filter"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_sort_white_24dp"
+        app:showAsAction="always">
+
+        <menu xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <item
+                    android:checkable="true"
+                    android:checked="true"
+                    android:id="@+id/action_filter_by_mais_rapido"
+                    android:orderInCategory="100"
+                    android:title="@string/action_filter_by_mais_rapido"
+                    app:showAsAction="never" />
+
+                <item
+                    android:id="@+id/action_filter_by_mais_barato"
+                    android:orderInCategory="100"
+                    android:title="@string/action_filter_by_mais_barato"
+                    app:showAsAction="never" />
+
+                <item
+                    android:id="@+id/action_filter_by_melhor_avaliacao"
+                    android:orderInCategory="100"
+                    android:title="@string/action_filter_by_melhor_avaliacao"
+                    app:showAsAction="never" />
+        </menu>
+    </item>
+
+</menu>

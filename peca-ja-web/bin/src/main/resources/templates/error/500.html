@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt" layout:decorate="~{main}">
+<head>
+<title>500</title>
+<meta charset="UTF-8">
+
+<!-- Custom styles for this template -->
+<link th:href="@{/css/custom.css}" rel="stylesheet" />
+
+</head>
+<body class="body-404">
+
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<section layout:fragment="content">
+
+		<div class="error-head"></div>
+		<div class="container ">
+			<section class="error-wrapper text-center">
+				<h1>
+					<img th:src="@{/img/500.png}" alt="">
+				</h1>
+				<div class="error-desk">
+					<h2>Desculpe algo deu errado</h2>
+					<p class="nrml-txt">Nossos engenheiros já estão trabalhando
+						nisso</p>
+				</div>
+				<a th:href="@{/}" class="back-btn"><i class="fa fa-home"></i>
+					Voltar para página inicial</a>
+			</section>
+		</div>
+
+	</section>
+	<!-- End Content -->
+
+</body>
+</html>
+

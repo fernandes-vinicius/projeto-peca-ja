@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html layout:decorate="~{template}">
+<head>
+<meta charset="UTF-8">
+<title>Peça Já! - Home</title>
+<style>
+#chartdiv {
+	width: 100%;
+	height: 300px;
+}
+</style>
+</head>
+<body>
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<section layout:fragment="content">
+		<!-- page content -->
+		<div class="container" role="main">
+
+			<!-- top tiles REVENDEDOR-->
+			<div class="row top_tiles"
+				sec:authorize="hasAuthority('ROLE_REVENDEDOR')">
+				<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<div class="icon">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="count">
+							<h1 th:text="${nClientesDoRevendedor}" class="count"></h1>
+						</div>
+						<h3>Total de Clientes</h3>
+					</div>
+				</div>
+				<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<a th:href="@{/pedidos/list}">
+							<div class="icon">
+								<i class="fa fa-bell-o green"></i>
+							</div>
+							<div class="count">
+								<h1 th:text="${nPedidosAguardando}" id="novosPedidos"
+									class="count green"></h1>
+							</div>
+							<h3>Novos Pedidos</h3>
+						</a>
+					</div>
+				</div>
+				<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<a th:href="@{/pedidos/list/caminho}">
+							<div class="icon">
+								<i class="fa far fa-truck"></i>
+							</div>
+							<div class="count">
+								<h1 th:text="${nPedidosCaminho}" class="count"></h1>
+							</div>
+							<h3>Pedidos A Caminho</h3>
+						</a>
+					</div>
+				</div>
+				<div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<div class="icon">
+							<i class="fa fa-astar"></i>
+						</div>
+						<div class="count">
+							<div class="ratings">
+								<i class="fa fa-star"></i><i class="fa fa-star"></i><i
+									class="fa fa-star"></i><i class="fa fa-star"></i><i
+									class="fa fa-star-o"></i>
+							</div>
+						</div>
+						<h3>Avalição</h3>
+					</div>
+				</div>
+			</div>
+			<!-- /top tiles REVENDEDOR-->
+
+			<div class="clearfix"></div>
+			<!-- Cards revendedor -->
+			<div class="row" sec:authorize="hasAuthority('ROLE_REVENDEDOR')">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i
+										class="fa fa-chevron-up"></i></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<div class="row">
+
+								<div class="col-md-12">
+
+									<!-- price element -->
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<div class="pricing">
+											<div class="title">
+												<div class="col-md-6">
+													<h2></h2>
+													<h3>Produtos</h3>
+												</div>
+												<div class="right col-xs-5 col-md-6 text-center">
+													<img th:src="@{/img/produtos-card.png}" alt=""
+														class="img-circle img-responsive">
+												</div>
+											</div>
+											<div class="x_content">
+												<div class="">
+													<div class="pricing_features">
+														<ul class="list-unstyled text-left">
+															<li><i class="fa fa-check text-success"></i>
+																Controle total de <strong>estoque</strong></li>
+															<li><i class="fa fa-check text-success"></i>
+																Inserção de <strong>novos produtos</strong></li>
+															<li><i class="fa fa-check text-success"></i> Edite
+																quando quiser <strong>sem burocracias</strong></li>
+															<li><i class="fa fa-check text-success"></i> <strong>Faça
+																	promoções</strong> quando desejar</li>
+															<li><i class="fa fa-check text-success"></i> Não
+																tabalha mais com esse produto. <strong>delete-o
+																	sem complicações</strong></li>
+														</ul>
+													</div>
+												</div>
+												<div class="pricing_footer">
+													<a th:href="@{/produtos/list}"
+														class="btn btn-success btn-block"> <i
+														class="fa fa-arrow-right"></i> Ir para Produtos
+													</a>
+													<p></p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- price element -->
+									<!-- price element -->
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<div class="pricing">
+											<div class="title">
+												<div class="col-md-6">
+													<h2></h2>
+													<h3>Pedidos</h3>
+												</div>
+												<div class="right col-xs-5 col-md-6 text-center">
+													<img th:src="@{/img/pedidos-card.png}" alt=""
+														class=" img-responsive">
+												</div>
+											</div>
+											<div class="x_content">
+												<div class="">
+													<div class="pricing_features">
+														<ul class="list-unstyled text-left">
+															<li><i class="fa fa-check text-success"></i> <strong>Pedidos
+																	atualizados </strong> em tempo real</li>
+															<li><i class="fa fa-check text-success"></i> Todas
+																as <strong> informações do pedido</strong></li>
+															<li><i class="fa fa-check text-success"></i> Livre
+																arbitrio para <strong> cancelar o pedido</strong> quando
+																for necessario</li>
+															<li><i class="fa fa-check text-success"></i> <strong>
+																	Avalie seus clientes </strong>para caracteriza-los melhor</li>
+															<li><i class="fa fa-check text-success"></i>
+																Acompanhe a <strong>tragetria de envio.</strong></li>
+														</ul>
+													</div>
+												</div>
+												<div class="pricing_footer">
+													<a th:href="@{/pedidos/list}"
+														class="btn btn-success btn-block"> <i
+														class="fa fa-arrow-right"></i> Ir para Pedidos
+													</a>
+													<p></p>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- price element -->
+									<!-- price element -->
+									<div class="col-md-4 col-sm-6 col-xs-12">
+										<div class="pricing">
+											<div class="title">
+												<div class="col-md-6">
+													<h2></h2>
+													<h3>Histórico</h3>
+												</div>
+												<div class="right col-xs-5 col-md-6 text-center">
+													<img th:src="@{/img/relatorios-card.png}" alt=""
+														class="img-circle img-responsive">
+												</div>
+												<br>
+											</div>
+											<div class="x_content">
+												<div class="">
+													<div class="pricing_features">
+														<ul class="list-unstyled text-left">
+															<li><i class="fa fa-check text-success"></i><strong>Acompanhe</strong>
+																sua produção</li>
+															<li><i class="fa fa-check text-success"></i> Veja
+																como foram <strong>suas vendas mensais </strong></li>
+															<li><i class="fa fa-check text-success"></i>
+																Detalhamento das suas vendas</strong></li>
+															<li><i class="fa fa-check text-success"></i>
+																Acompanhe o <strong>valor de caixa</strong>
+																diiariamenteFaça</li>
+															<li><i class="fa fa-check text-success"></i> Veja
+																como está seu <strong>estoque atual de
+																	produtos.</strong></li>
+														</ul>
+													</div>
+												</div>
+												<div class="pricing_footer">
+													<a th:href="@{/revendedor/historico}"
+														class="btn btn-success btn-block"> <i
+														class="fa fa-arrow-right"></i> Ir para Historico
+													</a>
+													<p></p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- price element -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- fim de cards revendedor -->
+
+			<!-- Grafico REVENDEDOR -->
+			<div class="row" sec:authorize="hasAuthority('ROLE_REVENDEDOR')">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="dashboard_graph">
+
+						<div class="row x_title">
+							<div class="col-md-12">
+								<h3>Resultados do mês</h3>
+							</div>
+						</div>
+
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div id="chartdiv" class="chartdiv float"></div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+
+			</div>
+			<!-- fim do grafico REVENDEDOR -->
+
+			<!---------------------------------------------------------------------------------------------------------->
+
+			<!-- /top tiles ADM-->
+			<div class="row tile_count" sec:authorize="hasAuthority('ROLE_ADM')">
+				<div class="animated flipInY col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<div class="icon">
+							<i class="fa fa-user"></i>
+						</div>
+						<div class="count">
+							<h1 th:text="${nClientesNoApp}" id="nClientesNoApp" class="count"></h1>
+						</div>
+						<h3>Clientes no App</h3>
+					</div>
+				</div>
+				<div class="animated flipInY col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<div class="icon">
+							<i class="fa fa-users"></i>
+						</div>
+						<div class="count">
+							<h1 th:text="${nRevendedores}" class="count"></h1>
+						</div>
+						<h3>Revendedores</h3>
+					</div>
+				</div>
+				<div class="animated flipInY col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<a th:href="@{/solicitacoes/list}">
+							<div class="icon">
+								<i class="fa fa-bell-o green"></i>
+							</div>
+							<div class="count">
+								<h1 th:text="${nSolicitacoes}" id="nSolicitacoes"
+									class="count green"></h1>
+							</div>
+							<h3>Novas Solicitações</h3>
+						</a>
+					</div>
+				</div>
+				<div class="animated flipInY col-md-3 col-sm-6 col-xs-12">
+					<div class="tile-stats">
+						<div class="icon">
+							<i class="fa fa-bell-o red"></i>
+						</div>
+						<div class="count">
+							<h1 class="count red">0</h1>
+						</div>
+						<h3>Entregas Canceladas</h3>
+					</div>
+				</div>
+			</div>
+			<!-- /top tiles ADM-->
+
+			<!-- Grafico ADM -->
+			<div class="row" sec:authorize="hasAuthority('ROLE_ADM')">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="dashboard_graph">
+
+						<div class="row x_title">
+							<div class="col-md-12">
+								<h3>Rssultados do Mês</h3>
+							</div>
+
+						</div>
+
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<div id="chartdiv" class="demo-placeholder"></div>
+						</div>
+						<div class="col-md-3 col-sm-3 col-xs-12 bg-white">
+							<div class="x_title">
+								<h2>Top Campaign Performance</h2>
+								<div class="clearfix"></div>
+							</div>
+
+							<div class="col-md-12 col-sm-12 col-xs-6">
+								<div>
+									<p>Facebook Campaign</p>
+									<div class="">
+										<div class="progress progress_sm" style="width: 76%;">
+											<div class="progress-bar bg-green" role="progressbar"
+												data-transitiongoal="80"></div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<p>Twitter Campaign</p>
+									<div class="">
+										<div class="progress progress_sm" style="width: 76%;">
+											<div class="progress-bar bg-green" role="progressbar"
+												data-transitiongoal="60"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-6">
+								<div>
+									<p>Conventional Media</p>
+									<div class="">
+										<div class="progress progress_sm" style="width: 76%;">
+											<div class="progress-bar bg-green" role="progressbar"
+												data-transitiongoal="40"></div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<p>Bill boards</p>
+									<div class="">
+										<div class="progress progress_sm" style="width: 76%;">
+											<div class="progress-bar bg-green" role="progressbar"
+												data-transitiongoal="50"></div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+						<div class="clearfix"></div>
+					</div>
+				</div>
+
+			</div>
+			<!-- fim do grafico ADM -->
+			<div class="row">
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="x_panel tile fixed_height_320 overflow_hidden">
+						<div class="x_title">
+							<h2>Device Usage</h2>
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i
+										class="fa fa-chevron-up"></i></a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-expanded="false"><i
+										class="fa fa-wrench"></i></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Settings 1</a></li>
+										<li><a href="#">Settings 2</a></li>
+									</ul></li>
+								<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<table class="" style="width: 100%">
+								<tr>
+									<th style="width: 37%;">
+										<p>Top 5</p>
+									</th>
+									<th>
+										<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+											<p class="">Device</p>
+										</div>
+										<div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+											<p class="">Progress</p>
+										</div>
+									</th>
+								</tr>
+								<tr>
+									<td>
+										<canvas class="canvasDoughnut" height="140" width="140"
+											style="margin: 15px 10px 10px 0"></canvas>
+									</td>
+									<td>
+										<table class="tile_info">
+											<tr>
+												<td>
+													<p>
+														<i class="fa fa-square blue"></i>IOS
+													</p>
+												</td>
+												<td>30%</td>
+											</tr>
+											<tr>
+												<td>
+													<p>
+														<i class="fa fa-square green"></i>Android
+													</p>
+												</td>
+												<td>10%</td>
+											</tr>
+											<tr>
+												<td>
+													<p>
+														<i class="fa fa-square purple"></i>Blackberry
+													</p>
+												</td>
+												<td>20%</td>
+											</tr>
+											<tr>
+												<td>
+													<p>
+														<i class="fa fa-square aero"></i>Symbian
+													</p>
+												</td>
+												<td>15%</td>
+											</tr>
+											<tr>
+												<td>
+													<p>
+														<i class="fa fa-square red"></i>Others
+													</p>
+												</td>
+												<td>30%</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<!-- to do list -->
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>
+								To Do List <small>Sample tasks</small>
+							</h2>
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i
+										class="fa fa-chevron-up"></i></a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-expanded="false"><i
+										class="fa fa-wrench"></i></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Settings 1</a></li>
+										<li><a href="#">Settings 2</a></li>
+									</ul></li>
+								<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+
+							<div class="">
+								<ul class="to_do">
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Schedule meeting
+											with new client
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Create email
+											address for new intern
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Have IT fix the
+											network printer
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Copy backups to
+											offsite location
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Food truck fixie
+											locavors mcsweeney
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Food truck fixie
+											locavors mcsweeney
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Create email
+											address for new intern
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Have IT fix the
+											network printer
+										</p>
+									</li>
+									<li>
+										<p>
+											<input type="checkbox" class="flat"> Copy backups to
+											offsite location
+										</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End to do list -->
+
+				<!-- start of weather widget -->
+				<div class="col-md-4 col-sm-6 col-xs-12">
+					<div class="x_panel">
+						<div class="x_title">
+							<h2>
+								Daily active users <small>Sessions</small>
+							</h2>
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i
+										class="fa fa-chevron-up"></i></a></li>
+								<li class="dropdown"><a href="#" class="dropdown-toggle"
+									data-toggle="dropdown" role="button" aria-expanded="false"><i
+										class="fa fa-wrench"></i></a>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="#">Settings 1</a></li>
+										<li><a href="#">Settings 2</a></li>
+									</ul></li>
+								<li><a class="close-link"><i class="fa fa-close"></i></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+						<div class="x_content">
+							<div class="row">
+								<div class="col-sm-12">
+									<div class="temperature">
+										<b>Monday</b>, 07:30 AM <span>F</span> <span><b>C</b></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-4">
+									<div class="weather-icon">
+										<canvas height="84" width="84" id="partly-cloudy-day"></canvas>
+									</div>
+								</div>
+								<div class="col-sm-8">
+									<div class="weather-text">
+										<h2>
+											Texas <br>
+											<i>Partly Cloudy Day</i>
+										</h2>
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-12">
+								<div class="weather-text pull-right">
+									<h3 class="degrees">23</h3>
+								</div>
+							</div>
+
+							<div class="clearfix"></div>
+
+							<div class="row weather-days">
+								<div class="col-sm-2">
+									<div class="daily-weather">
+										<h2 class="day">Mon</h2>
+										<h3 class="degrees">25</h3>
+										<canvas id="clear-day" width="32" height="32"></canvas>
+										<h5>
+											15 <i>km/h</i>
+										</h5>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="daily-weather">
+										<h2 class="day">Tue</h2>
+										<h3 class="degrees">25</h3>
+										<canvas height="32" width="32" id="rain"></canvas>
+										<h5>
+											12 <i>km/h</i>
+										</h5>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="daily-weather">
+										<h2 class="day">Wed</h2>
+										<h3 class="degrees">27</h3>
+										<canvas height="32" width="32" id="snow"></canvas>
+										<h5>
+											14 <i>km/h</i>
+										</h5>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="daily-weather">
+										<h2 class="day">Thu</h2>
+										<h3 class="degrees">28</h3>
+										<canvas height="32" width="32" id="sleet"></canvas>
+										<h5>
+											15 <i>km/h</i>
+										</h5>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="daily-weather">
+										<h2 class="day">Fri</h2>
+										<h3 class="degrees">28</h3>
+										<canvas height="32" width="32" id="wind"></canvas>
+										<h5>
+											11 <i>km/h</i>
+										</h5>
+									</div>
+								</div>
+								<div class="col-sm-2">
+									<div class="daily-weather">
+										<h2 class="day">Sat</h2>
+										<h3 class="degrees">26</h3>
+										<canvas height="32" width="32" id="cloudy"></canvas>
+										<h5>
+											10 <i>km/h</i>
+										</h5>
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- /page content -->
+	</section>
+	<!-- End Content -->
+	<th:block xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:fragment="end">
+
+		<!-- jQuery -->
+		<script th:src="@{/vendors/jquery/dist/jquery.min.js}">
+			
+		</script>
+		<!-- Bootstrap -->
+		<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+		<!-- FastClick -->
+
+		<!--Bootbox Scripts-->
+		<script th:src="@{/js/bootbox.min.js}"></script>
+		<script th:src="@{/js/modal-confirme.js}"></script>
+
+		<!-- Custom Theme Scripts -->
+		<script th:src="@{/js/custom.min.js}"></script>
+
+
+		<!-- JS md chart -->
+		<script th:src="@{/vendors/amChart/amcharts.js}"></script>
+		<script th:src="@{/vendors/amChart/serial.js}"></script>
+		<script th:src="@{vendors/export/export.min.js}"></script>
+		<link rel="stylesheet" th:href="@{vendors/export/export.css}"
+			type="text/css" media="all" />
+		<script th:src="@{/vendors/amChart/light.js}"></script>
+
+		<script>
+			$.ajax({
+				method : "GET",
+				url : "/revendedores/resultados/mes",
+			}).done(function(data) {
+				var chart = AmCharts.makeChart("chartdiv", {
+					"theme" : "light",
+					"type" : "serial",
+					"dataProvider" : [ {
+						"year" : "Venda de Gás",
+						"income" : data[0]
+					}, {
+						"year" : "Venda de Água",
+						"income" : data[1]
+					}, {
+						"year" : "Caixa Mensal(R$)",
+						"income" : data[2]
+					} ],
+					"valueAxes" : [ {
+						"title" : "Resultados referentes as vendas deste mês"
+
+					} ],
+					"graphs" : [ {
+						"fillAlphas" : 1,
+						"lineAlpha" : 0.2,
+						"title" : "Income",
+						"type" : "column",
+						"fontSize" : "100",
+						"valueField" : "income"
+					} ],
+					"depth3D" : 0,
+					"angle" : 0,
+					"rotate" : true,
+					"categoryField" : "year",
+					"categoryAxis" : {
+						"gridPosition" : "start",
+						"fillAlpha" : 0.05,
+						"position" : "left"
+					},
+					"titles" : [ {
+						"text" : "",
+						"fontSize" : "100"
+					} ],
+					"export" : {
+						"enabled" : true,
+					}
+				});
+			}).fail(function(jqXHR, textStatus) {
+
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(
+					function() {
+						setTime();
+						function setTime() {
+							setTimeout(setTime, 10000);
+							$.get("/pedidos/ajax/countPedidosAguardando",
+									function(data) {
+										$('#novosPedidos').html(data);
+									});
+							$.get("/solicitacoes/ajax/countSolicitacoes",
+									function(data) {
+										$('#nSolicitacoes').html(data);
+									});
+							$.get("/clientes/ajax/countClientes",
+									function(data) {
+										$('#nClientesNoApp').html(data);
+									});
+						}
+						;
+					});
+		</script>
+	</th:block>
+</body>
+</html>

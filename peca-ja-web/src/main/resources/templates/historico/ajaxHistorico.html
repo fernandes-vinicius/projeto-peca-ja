@@ -1,0 +1,104 @@
+
+<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+<section layout:fragment="content">
+
+	<div class="x_panel">
+		<div class="x_title">
+			<h2 th:text="'Histórico de compras do mês de ' + ${msgMesEano}"></h2>
+			<ul class="nav navbar-right panel_toolbox">
+				<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+
+		<br /> <br />
+
+		<div class="x_content">
+
+			<div class="count">
+				<div id="openIcon" style="text-align: center" align="center"></div>
+			</div>
+
+			<div th:if="${#lists.isEmpty(pedidos)}" align="center">
+				<h2 class="count" id="msgMesEano"
+					th:text="'Nenhuma compra no mês de ' + ${msgMesEano}"></h2>
+			</div>
+			<!-- Table -->
+			<div class="table-responsive" th:unless="${#lists.isEmpty(pedidos)}"
+				id="dataTable">
+
+				<table id="datatable-buttons"
+					class="table table-striped table-bordered">
+					<thead>
+						<tr>
+							<th>Cliente</th>
+							<th>Endereço</th>
+							<th>Produto</th>
+							<th>Marca</th>
+							<th>Quantidade</th>
+							<th>Preço Uni.</th>
+							<th>Data</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="pedido : ${pedidos}">
+							<td th:text="${pedido.cliente.nome}"></td>
+							<td th:text="${pedido.cliente.endereco.rua}"></td>
+							<td th:text="${pedido.produto.categoria.nome}"></td>
+							<td th:text="${pedido.produto.marca.nome}"></td>
+							<td th:text="${pedido.quantidade}"></td>
+							<td th:text="${pedido.produto.preco}"></td>
+							<td th:text="${pedido.data}"></td>
+
+						</tr>
+					</tbody>
+
+				</table>
+			</div>
+			<!--End table -->
+			<br /></br>
+		</div>
+
+	</div>
+</section>
+</body>
+
+<th:block xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:fragment="end">
+
+	<!-- Datatable Js -->
+	<script th:src="@{/vendors/datatables.net/js/jquery.dataTables.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/dataTables.buttons.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/buttons.flash.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/buttons.html5.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-buttons/js/buttons.print.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-responsive/js/dataTables.responsive.min.js}"></script>
+	<script
+		th:src="@{/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js}"></script>
+	<script
+		th:src="@{vendors/datatables.net-scroller/js/dataTables.scroller.min.js}"></script>
+	<script th:src="@{/vendors/jszip/dist/jszip.min.js}"></script>
+	<script th:src="@{/vendors/pdfmake/build/pdfmake.min.js}"></script>
+	<script th:src="@{/vendors/pdfmake/build/vfs_fonts.js}"></script>
+	<!-- Custom Theme Scripts -->
+	<script th:src="@{/js/custom.min.js}"></script>
+	
+</th:block>
+<!-- END fragment scripts -->
+</html>
+

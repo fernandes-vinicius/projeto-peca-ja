@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ProfileActivity"
+    tools:showIn="@layout/activity_profile"
+    android:background="@color/colorBackground">
+
+    <!-- Layout Content-->
+    <LinearLayout
+        android:padding="@dimen/content_padding"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Layout - Dados Pessoais -->
+        <LinearLayout
+            android:padding="@dimen/content_padding"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Layout - Title Dados Pessoais -->
+            <LinearLayout
+                android:paddingBottom="@dimen/padding_min"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Seus dados pessoais"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <!-- End Layout - Title Dados Pessoais -->
+
+            <!-- Layout - Dados Pessoais -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- CardView - Dados Pessoais -->
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/cardview_elevation"
+                    android:layout_marginBottom="@dimen/cardview_margin_bottom">
+
+                    <LinearLayout
+                        android:padding="@dimen/content_padding"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Layout - Nome -->
+                        <LinearLayout
+                            android:paddingTop="@dimen/content_padding"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Title Nome -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Nome"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title Nome -->
+
+                            <!-- Layout - Nome -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_nome"
+                                    android:text=""
+                                    android:textSize="@dimen/text_size_biggest"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Nome -->
+
+                        </LinearLayout>
+                        <!-- End Layout - Nome -->
+
+                        <!-- Layout - CPF -->
+                        <LinearLayout
+                            android:paddingTop="@dimen/content_padding"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Title CPF -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="CPF"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title CPF -->
+
+                            <!-- Layout - CPF -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_cpf"
+                                    android:text=""
+                                    android:textSize="@dimen/text_size_biggest"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - CPF -->
+
+                        </LinearLayout>
+                        <!-- End Layout - CPF -->
+
+                        <!-- Layout - Telefone -->
+                        <LinearLayout
+                            android:paddingTop="@dimen/content_padding"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Title Telefone -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Telefone"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title Telefone -->
+
+                            <!-- Layout - Telefone -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_telefone"
+                                    android:text=""
+                                    android:textSize="@dimen/text_size_biggest"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Telefone -->
+
+                        </LinearLayout>
+                        <!-- End Layout - Telefone -->
+
+                        <!-- Layout - Email -->
+                        <LinearLayout
+                            android:paddingTop="@dimen/content_padding"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Title Email -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="E-mail"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title Email -->
+
+                            <!-- Layout - Email -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_email"
+                                    android:text=""
+                                    android:textSize="@dimen/text_size_biggest"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Email -->
+
+                        </LinearLayout>
+                        <!-- End Layout - Email -->
+
+                        <!-- Layout - Usuário -->
+                        <LinearLayout
+                            android:paddingTop="@dimen/content_padding"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Title Usuário -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Usuário"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title Usuário -->
+
+                            <!-- Layout - Usuário -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_username"
+                                    android:text=""
+                                    android:textSize="@dimen/text_size_biggest"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Usuário -->
+
+                        </LinearLayout>
+                        <!-- End Layout - Usuário -->
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+                <!-- End CardView - Dados Pessoais -->
+
+            </LinearLayout>
+            <!-- End Layout - Dados Pessoais -->
+
+        </LinearLayout>
+        <!-- End Layout - Dados Pessoais -->
+
+        <!-- Layout - Endereço -->
+        <LinearLayout
+            android:padding="@dimen/content_padding"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Layout - Title Endereço -->
+            <LinearLayout
+                android:paddingBottom="@dimen/padding_min"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Seu endereço"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <!-- End Layout - Title Endereço -->
+
+            <!-- Layout - Endereço -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- CardView - Endereço -->
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/cardview_elevation"
+                    android:layout_marginBottom="@dimen/cardview_margin_bottom">
+
+                    <LinearLayout
+                        android:padding="@dimen/content_padding"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Layout - Cidade/Estado -->
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <!-- Layout - Cidade -->
+                                <RelativeLayout
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <!-- Layout - Cidade -->
+                                    <LinearLayout
+                                        android:paddingTop="@dimen/content_padding"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <!-- Layout - Title Cidade -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:text="Cidade"
+                                                android:textSize="@dimen/text_size"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Title Cidade -->
+
+                                        <!-- Layout - Cidade -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/tv_cidade"
+                                                android:text=""
+                                                android:textSize="@dimen/text_size_biggest"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Cidade -->
+
+                                    </LinearLayout>
+                                    <!-- End Layout - Cidade -->
+
+                                </RelativeLayout>
+                                <!-- End Layout - Cidade -->
+
+                                <!-- Layout - Estado -->
+                                <RelativeLayout
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="50dp"
+                                    android:layout_height="wrap_content">
+
+                                    <!-- Layout - Estado -->
+                                    <LinearLayout
+                                        android:paddingTop="@dimen/content_padding"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <!-- Layout - Title Estado -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:text="Estado"
+                                                android:textSize="@dimen/text_size"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Title Estado -->
+
+                                        <!-- Layout - Estado -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/tv_estado"
+                                                android:text=""
+                                                android:textSize="@dimen/text_size_biggest"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Estado -->
+
+                                    </LinearLayout>
+                                    <!-- End Layout - Estado -->
+
+                                </RelativeLayout>
+                                <!-- End Layout - Estado -->
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <!-- End Layout - Cidade/Estado -->
+
+                        <!-- Layout - Rua/Numero -->
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <!-- Layout - Rua -->
+                                <RelativeLayout
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <!-- Layout - Rua -->
+                                    <LinearLayout
+                                        android:paddingTop="@dimen/content_padding"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <!-- Layout - Title Rua -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:text="Rua"
+                                                android:textSize="@dimen/text_size"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Title Rua -->
+
+                                        <!-- Layout - Rua -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/tv_rua"
+                                                android:text=""
+                                                android:textSize="@dimen/text_size_biggest"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Rua -->
+
+                                    </LinearLayout>
+                                    <!-- End Layout - Rua -->
+
+                                </RelativeLayout>
+                                <!-- End Layout - Rua -->
+
+                                <!-- Layout - Numero -->
+                                <RelativeLayout
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="50dp"
+                                    android:layout_height="wrap_content">
+
+                                    <!-- Layout - Numero -->
+                                    <LinearLayout
+                                        android:paddingTop="@dimen/content_padding"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <!-- Layout - Title Numero -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:text="Nº"
+                                                android:textSize="@dimen/text_size"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Title Numero -->
+
+                                        <!-- Layout - Numero -->
+                                        <LinearLayout
+                                            android:orientation="vertical"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                            <TextView
+                                                android:id="@+id/tv_numero"
+                                                android:text=""
+                                                android:textSize="@dimen/text_size_biggest"
+                                                android:textStyle="bold"
+                                                android:textColor="@android:color/black"
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content" />
+                                        </LinearLayout>
+                                        <!-- End Layout - Numero -->
+
+                                    </LinearLayout>
+                                    <!-- End Layout - Numero -->
+
+                                </RelativeLayout>
+                                <!-- End Layout - Numero -->
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <!-- End Layout - Rua/Numero -->
+
+                        <!-- Layout - Bairro -->
+                        <LinearLayout
+                            android:paddingTop="@dimen/content_padding"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Title Bairro -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Bairro"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title Bairro -->
+
+                            <!-- Layout - Bairro -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_bairro"
+                                    android:text=""
+                                    android:textSize="@dimen/text_size_biggest"
+                                    android:textStyle="bold"
+                                    android:textColor="@android:color/black"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Bairro -->
+
+                        </LinearLayout>
+                        <!-- End Layout - Bairro -->
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+                <!-- End CardView - Endereço -->
+
+            </LinearLayout>
+            <!-- End Layout - Endereço -->
+
+        </LinearLayout>
+        <!-- End Layout - Endereço -->
+
+    </LinearLayout>
+    <!-- End Layout Content-->
+
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/app_bar_main"
+    android:background="@color/colorBackground">
+
+    <!-- Layout - Cabeçalho -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- CardView - Cabeçalho -->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="@dimen/cardview_elevation"
+                android:layout_marginBottom="@dimen/cardview_margin_bottom">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/content_padding">
+
+                    <LinearLayout
+                        android:id="@+id/linear_title"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:text="@string/text_header"
+                            android:textSize="@dimen/text_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_rua_and_numero"
+                        android:layout_below="@+id/linear_title"
+                        android:paddingTop="5dp"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_rua_and_numero"
+                            android:text="Avenida Paulista 58"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/text_header_size"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linear_bairro_and_cidade"
+                        android:layout_below="@+id/linear_rua_and_numero"
+                        android:layout_alignParentLeft="true"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_bairro_and_cidade"
+                            android:text="Bela Vista, São Paulo"
+                            android:textSize="@dimen/text_size_biggest"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/btn_edit_locale"
+                            android:padding="@dimen/padding_min"
+                            android:textColor="@color/colorPrimary"
+                            android:background="@drawable/ripple_effect"
+                            android:drawableTop="@drawable/ic_location_on_black_32dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textAllCaps="true"
+                            android:text="@string/text_button_mudar_endereco"
+                            android:textSize="@dimen/text_size_biggest"/>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- End CardView - Cabeçalho -->
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- End Layout - Cabeçalho -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:gravity="center"
+            android:text="Selecione uma categoria"
+            android:textSize="@dimen/text_header_size"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!-- Layout - Spinner Categoria -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:id="@+id/radio_group_categoria"
+                android:padding="@dimen/spinner_padding"
+                android:checkedButton="@id/radio_btn_agua"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Radio Button - Água -->
+                <RadioButton
+                    android:id="@+id/radio_btn_agua"
+                    android:layout_marginRight="@dimen/spinner_margin_right"
+                    android:text="@string/text_radio_button_agua"
+                    android:textColor="@color/colorPrimary"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="@dimen/label_text_size"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!-- End Radio Button - Água -->
+
+                <!-- Radio Button - Água -->
+                <RadioButton
+                    android:id="@+id/radio_btn_gas"
+                    android:text="@string/text_radio_button_gas"
+                    android:textColor="@color/colorPrimary"
+                    android:buttonTint="@color/colorPrimary"
+                    android:textSize="@dimen/label_text_size"
+                    android:textAlignment="center"
+                    android:textAllCaps="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <!-- End Radio Button - Água -->
+
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <!-- End Layout - Spinner Categoria -->
+
+    <!-- Layout - ListView Produtos Revendedores -->
+    <LinearLayout
+        android:padding="@dimen/padding_listview"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:id="@+id/listview_produtos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:footerDividersEnabled="false"
+            android:headerDividersEnabled="false"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="@dimen/divier_height_listview"
+            android:clipToPadding="false"
+            android:orientation="vertical"/>
+    </LinearLayout>
+    <!-- End ListView Produtos Revendedores -->
+
+</LinearLayout>

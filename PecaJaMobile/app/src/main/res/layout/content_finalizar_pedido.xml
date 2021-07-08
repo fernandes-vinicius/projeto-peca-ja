@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FinalizarPedidoActivity"
+    tools:showIn="@layout/activity_finalizar_pedido"
+    android:background="@color/colorBackground">
+
+    <!-- Layout - Content -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground">
+
+        <!-- Layout - Cabeçalho -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- CardView - Cabeçalho -->
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="@color/colorAccent">
+
+                <LinearLayout
+                    android:id="@+id/layout_categoria"
+                    android:background="#000"
+                    android:orientation="vertical"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_categoria"
+                        android:text="NULO"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center_vertical"
+                        android:rotation="270"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:padding="@dimen/content_padding"
+                    android:layout_marginLeft="40dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/layout_card_content_right"
+                        android:layout_alignParentRight="true"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <!-- Layout - Nome Fantasia -->
+                        <LinearLayout
+                            android:id="@+id/linear_fantasia"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_fantasia"
+                                android:text="NOME FANTASIA"
+                                android:textSize="15sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <!-- End Layout - Nome Fantasia -->
+
+                        <!-- Layout - Infos -->
+                        <LinearLayout
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <!-- Layout - Nota -->
+                                <RelativeLayout
+                                    android:id="@+id/layout_data"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_title_data"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_data"
+                                            android:text="Nota"
+                                            android:textSize="12sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_data"
+                                        android:layout_below="@+id/linear_title_data"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_nota"
+                                            android:text="0,0 ✭"
+                                            android:textStyle="bold"
+                                            android:textColor="#000"
+                                            android:textSize="18sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                                <!-- End Layout - Nota -->
+
+                                <!-- Layout - Previsão -->
+                                <RelativeLayout
+                                    android:id="@+id/layout_previsao"
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_title_previsao"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_previsao"
+                                            android:text="Previsão"
+                                            android:textSize="12sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_previsao"
+                                        android:layout_below="@+id/linear_title_previsao"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_previsao"
+                                            android:text="-1 min"
+                                            android:textStyle="bold"
+                                            android:textColor="#000"
+                                            android:textSize="18sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                                <!-- End Layout - Previsão -->
+
+                                <!-- Layout - Preço -->
+                                <RelativeLayout
+                                    android:id="@+id/layout_preco"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_title_preco"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_preco"
+                                            android:text="Preço"
+                                            android:textSize="12sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_preco"
+                                        android:layout_below="@+id/linear_title_preco"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_preco"
+                                            android:text="R$ 00,00"
+                                            android:textStyle="bold"
+                                            android:textColor="#000"
+                                            android:textSize="18sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                                <!-- End Layout - Preço -->
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <!-- End Layout - Infos -->
+
+                        <!-- Layout - Dvider -->
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:id="@+id/Divisor1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dip"
+                                android:background="#E7F2F4" />
+                        </LinearLayout>
+                        <!-- End Layout - Dvider -->
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+            <!-- End CardView - Cabeçalho -->
+
+            <!-- Layout - Dvider -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="#E7F2F4" />
+            </LinearLayout>
+            <!-- End Layout - Dvider -->
+
+            <!-- Layout Info - Pedido -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.v7.widget.CardView
+                    app:contentPadding="@dimen/padding_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/cardview_elevation"
+                    android:layout_marginBottom="@dimen/cardview_margin_bottom">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_gravity="center"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Quantidade -->
+                            <RelativeLayout
+                                android:id="@+id/layout_btn_quantidade"
+                                android:layout_alignParentLeft="true"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btn_quantidade"
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="35dp"
+                                    android:layout_height="35dp"
+                                    android:text="10"
+                                    android:textColor="@color/colorAccent"
+                                    android:textStyle="bold"
+                                    android:textSize="10sp"
+                                    android:pointerIcon="hand"
+                                    android:background="@drawable/button_press" />
+                            </RelativeLayout>
+                            <!-- End Layout - Quantidade -->
+
+                            <!-- Layout - Quantidade -->
+                            <RelativeLayout
+                                android:layout_marginLeft="@dimen/padding_min"
+                                android:layout_toRightOf="@id/layout_btn_quantidade"
+                                android:layout_centerHorizontal="true"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_peso"
+                                    android:gravity="center"
+                                    android:layout_marginTop="15sp"
+                                    android:layout_marginLeft="10dp"
+                                    android:layout_centerInParent="true"
+                                    android:text="Produto de 13Kg"
+                                    android:textColor="#000"
+                                    android:textSize="15sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </RelativeLayout>
+                            <!-- End Layout - Quantidade -->
+
+                            <!-- Layout - Quantidade -->
+                            <RelativeLayout
+                                android:layout_marginRight="10dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_total"
+                                    android:layout_centerInParent="true"
+                                    android:text="R$ 0,00"
+                                    android:layout_marginTop="10sp"
+                                    android:textStyle="bold"
+                                    android:textColor="#000"
+                                    android:textSize="18sp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </RelativeLayout>
+                            <!-- End Layout - Quantidade -->
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+            <!-- End Layout Info - Pedido -->
+
+        </LinearLayout>
+        <!-- End Layout - Cabeçalho -->
+
+        <!-- Layout - Confirm Dados -->
+        <LinearLayout
+            android:padding="@dimen/content_padding"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Layout - Title Confirm Dados -->
+            <LinearLayout
+                android:paddingBottom="@dimen/padding_min"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Confirme seus dados"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <!-- End Layout - Title Confirm Dados -->
+
+            <!-- Layout - Card Confirm Dados -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- CardView - Confirm Dado -->
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="@dimen/cardview_elevation"
+                        android:layout_marginBottom="@dimen/cardview_margin_bottom">
+
+                        <LinearLayout
+                            android:padding="@dimen/content_padding"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <!-- Layout - Title Nome -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Seu nome"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title Nome -->
+
+                            <!-- Layout - Nome -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_nome"
+                                    android:text="Teste"
+                                    android:textStyle="bold"
+                                    android:textColor="#000"
+                                    android:textSize="16sp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Nome -->
+
+                            <!-- Layout - Title Telefone -->
+                            <LinearLayout
+                                android:paddingTop="@dimen/content_padding"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:text="Seu telefone"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Title Telefone -->
+
+                            <!-- Layout - Telefone -->
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_telefone"
+                                    android:text="000000000"
+                                    android:textStyle="bold"
+                                    android:textColor="#000"
+                                    android:textSize="16sp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                            <!-- End Layout - Telefone -->
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <!-- End CardView - Confirm Dado -->
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- End Layout - Card Confirm Dados -->
+
+        </LinearLayout>
+        <!-- End Layout - Confirm Dados  -->
+
+        <!-- Layout - Endereço -->
+        <LinearLayout
+            android:padding="@dimen/content_padding"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- Layout - Title Endereco -->
+            <LinearLayout
+                android:paddingBottom="@dimen/padding_min"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="O endereço está correto?"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <!-- End Layout - Title Endereco -->
+
+            <!-- Layout - Card Endereco -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- CardView - Cabeçalho -->
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="@dimen/cardview_elevation"
+                        android:layout_marginBottom="@dimen/cardview_margin_bottom">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/content_padding">
+
+                            <LinearLayout
+                                android:id="@+id/linear_title"
+                                android:layout_alignParentLeft="true"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_title"
+                                    android:text="@string/text_header"
+                                    android:textSize="@dimen/text_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linear_rua_and_numero"
+                                android:layout_below="@+id/linear_title"
+                                android:paddingTop="5dp"
+                                android:layout_alignParentLeft="true"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_rua_and_numero"
+                                    android:text="Avenida Paulista 58"
+                                    android:textColor="#000"
+                                    android:textSize="@dimen/text_header_size"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/linear_bairro_and_cidade"
+                                android:layout_below="@+id/linear_rua_and_numero"
+                                android:layout_alignParentLeft="true"
+                                android:orientation="vertical"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_bairro_and_cidade"
+                                    android:text="Bela Vista, São Paulo"
+                                    android:textSize="@dimen/text_size_biggest"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btn_edit_locale"
+                                    android:padding="@dimen/padding_min"
+                                    android:textColor="@color/colorPrimary"
+                                    android:background="@drawable/ripple_effect"
+                                    android:drawableTop="@drawable/ic_location_on_black_32dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:textAllCaps="true"
+                                    android:text="@string/text_button_mudar_endereco"
+                                    android:textSize="@dimen/text_size_biggest"/>
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <!-- End CardView - Cabeçalho -->
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- End Layout - Card Endereco -->
+
+        </LinearLayout>
+        <!-- End Layout - Endereço -->
+
+        <!-- Layout - Dicas p/ Entregador -->
+        <LinearLayout
+            android:padding="@dimen/content_padding"
+            android:layout_marginBottom="80dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Dicas para o entregador"
+                    android:textSize="20sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardElevation="@dimen/cardview_elevation"
+                        app:contentPadding="@dimen/content_padding"
+                        android:layout_marginBottom="@dimen/cardview_margin_bottom">
+
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.rengwuxian.materialedittext.MaterialEditText
+                                android:id="@+id/et_dicas_entregador"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:hint="Campainha quebrada, Cão feroz, etc..."
+                                android:textCursorDrawable="@drawable/text_cursor_cyan"
+                                android:textSize="@dimen/text_header_size"
+                                app:met_floatingLabel="highlight"
+                                app:met_maxCharacters="20"
+                                app:met_primaryColor="?colorPrimary"
+                                app:met_singleLineEllipsis="true" />
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+                    <!-- End CardView - Cabeçalho -->
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <!-- End Layout - Dicas p/ Entregador -->
+
+    </LinearLayout>
+    <!-- End Layout - Content -->
+
+</android.support.v4.widget.NestedScrollView>

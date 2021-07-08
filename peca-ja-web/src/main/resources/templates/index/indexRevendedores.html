@@ -1,0 +1,619 @@
+
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Peça Já - água e gás! Baixe o App.</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+
+<!-- Favicon and apple touch icons-->
+<link rel="shortcut icon" th:href="@{/img/logo-peca-ja.png}"
+	type="image/x-icon" />
+
+<!-- Bootstrap CSS-->
+<link rel="stylesheet"
+	th:href="@{https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/bootstrap/css/bootstrap.min.css}" />
+
+<!-- Font Awesome -->
+<link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet">
+
+<!-- Google fonts - Roboto-->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" />
+
+<!-- Owl carousel-->
+<link rel="stylesheet"
+	href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel/assets/owl.carousel.css">
+<link rel="stylesheet"
+	href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel/assets/owl.theme.default.css">
+
+<!-- Theme stylesheet-->
+<link rel="stylesheet" th:href="@{/css/style.default.css}"
+	id="theme-stylesheet" />
+
+<!-- Custom stylesheet - for your changes-->
+<link rel="stylesheet" th:href="@{/css/custom.css}" />
+
+</head>
+
+<body>
+
+	<div id="all">
+
+		<!-- Top bar-->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row d-flex align-items-center">
+
+					<div class="col-md-6 d-md-block d-none">
+						<p>Entre em contato conosco +55 3378 0105 ou
+							contato@pecaja.com.</p>
+					</div>
+					<div class="col-md-6">
+						<div class="d-flex justify-content-md-end justify-content-between">
+							<ul class="list-inline contact-info d-block d-md-none">
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-phone"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-envelope"></i></a></li>
+							</ul>
+
+							<!-- Menu Login -->
+							<div class="login">
+								<a th:href="@{/home}" class="login-btn"><i
+									class="fa fa-sign-in"></i><span th:text="#{titles.login}"
+									class="d-none d-md-inline-block"></span> </a>
+							</div>
+							<!-- /Menu Login -->
+
+							<!-- Redes Sociais -->
+							<ul class="social-custom list-inline">
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-google-plus"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-twitter"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-envelope"></i></a></li>
+							</ul>
+							<!-- /Redes Sociais -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Top bar end-->
+
+		<!-- Navbar Start-->
+		<header class="nav-holder make-sticky">
+			<div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+				<div class="container">
+
+					<!-- Logo -->
+					<a th:href="@{/}" class="navbar-brand home"><img
+						th:src="@{/img/logo.png}" alt="Logo Peça Já!"
+						class="d-none d-md-inline-block"><img
+						th:src="@{/img/logo.png}" alt="Logo Peça Já"
+						class="d-inline-block d-md-none"><span class="sr-only">Peça
+							Já - Ir para a Index</span></a>
+					<!-- Logo end -->
+
+					<button type="button" data-toggle="collapse"
+						data-target="#navigation"
+						class="navbar-toggler btn-template-outlined">
+						<span class="sr-only">Toggle navigation</span><i
+							class="fa fa-align-justify"></i>
+					</button>
+
+					<!-- Itens de Menu -->
+					<div id="navigation" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav ml-auto">
+
+							<!-- CONHEÇA O PEÇA JÁ -->
+							<li class="nav-item dropdown menu-large"><a th:href="@{/}">
+									Conheça o Peça Já<b class="caret"></b>
+							</a></li>
+							<!-- /CONHEÇA O PEÇA JÁ -->
+
+							<!-- REVENDEDORES -->
+							<li class="nav-item dropdown"><a
+								th:href="@{/indexRevendedores}"> <span
+									th:text="#{titles.index.menu.revended}"></span><b class="caret"></b>
+							</a></li>
+							<!-- /REVENDEDORES -->
+
+						</ul>
+					</div>
+					<!-- Itens de Menu end -->
+
+				</div>
+			</div>
+		</header>
+		<!-- Navbar End-->
+
+		<!-- Section Carousel Fornecedor -->
+		<section
+			style="background: url('https://d19m59y37dris4.cloudfront.net/universal/2-0-1/img/photogrid.jpg') center center repeat; background-size: cover;"
+			class="bar background-white relative-positioned">
+			<div class="container">
+				<!-- Carousel Start-->
+				<div class="home-carousel">
+					<div class="dark-mask mask-primary"></div>
+					<div class="container">
+						<div class="homepage owl-carousel">
+
+							<div class="item">
+								<div class="row">
+									<div class="col-md-7 text-left">
+										<p>Você é um revendedor de gás ou água mineral?</p>
+										<h1>Faça parte do Peça Já!</h1>
+										<ul class="list-unstyled">
+											<li>Aumente suas vendas!</li>
+											<li>Amplie sua reputação!</li>
+										</ul>
+										<a href="#form" class="btn btn-template-outlined-white">Saiba
+											Mais</a>
+									</div>
+									<div class="col-md-5">
+										<img th:src="@{/img/banner2.png}" alt="" class="img-fluid">
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- Carousel End-->
+			</div>
+		</section>
+		<!-- Section Carousel End -->
+
+		<!-- Section Form solicitação -->
+		<section id="form" class="bar no-mb text-md-left">
+			<div class="heading text-center">
+				<h2 th:text="#{indexRevendedores.form.title}"></h2>
+			</div>
+			<div class="col-md-8 mx-auto">
+
+				<div id="alert" style="text-align: center"></div>
+
+				<!-- Form Solicitacao -->
+				<form th:action="@{/solicitacoes/save}" th:object="${user}"
+					id="form-solicitacao" method="post" class="form-validate">
+
+					<div class="row">
+
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label th:text="#{indexRevendedores.form.email.label}"
+									for="email"></label> <input title="Email" name="email"
+									id="email" required type="text" class="form-control">
+							</div>
+
+						</div>
+
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label th:text="#{indexRevendedores.form.cnpj.label}"
+									for="subject"></label> <input id="cnpj"
+									onkeyup="mascara('##.###.###/####-##',this,event,true)"
+									maxlength="18" title="CNPJ do fornecedor" name="cnpj"
+									type="text" required class="form-control">
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label th:text="#{indexRevendedores.form.msg.label}"
+									for="message"></label>
+								<textarea id="message" name="mensagem" class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="col-sm-12 text-center">
+							<button type="submit" class="btn btn-template-outlined">
+								<i class="fa fa-envelope-o"></i><span
+									th:text="#{indexRevendedores.form.button.enviar}"></span>
+							</button>
+						</div>
+					</div>
+				</form>
+				<!-- Form Solicitacao End -->
+
+			</div>
+		</section>
+		<!-- Section Solicitação end -->
+
+		<!-- Section Download App -->
+		<section
+			style="background: url(https://portal.limaempresarial.com/wp-content/uploads/2016/10/contabilidade.jpg) center top no-repeat; background-size: cover;"
+			class="bar no-mb color-white text-center bg-fixed relative-positioned text-md-center">
+			<div class="dark-mask"></div>
+
+			<div class="container">
+				<div class="icon icon-outlined icon-lg">
+					<i class="fa fa-thumbs-up"></i>
+				</div>
+				<h1 class="text-uppercase">Algumas razões para fazer parte do
+					Peça Já!</h1>
+				<p class="lead">Veja os principais motivos para juntar-se à nós!</p>
+				<p class="text-center">
+					<a href="#reasons" class="btn btn-template-outlined-white btn-lg">Saiba
+						Mais</a>
+				</p>
+			</div>
+		</section>
+		<!-- Section Download App end -->
+
+		<section id="reasons" class="bar no-mb text-md-center">
+			<div class="container">
+				<div class="row text-center">
+					<div class="col-md-4">
+						<div class="box-simple">
+							<div class="icon-outlined">
+								<i class="fa fa-facebook-square"></i>
+							</div>
+							<h3 class="h4">O Peça Já está onde o consumidor está:
+								ONLINE!</h3>
+							<p>Para estar sempre por perto, nosso aplicativo conta com a
+								tecnologia mais atual e uma forte presença nas redes sociais.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-simple">
+							<div class="icon-outlined">
+								<i class="fa fa-share-alt-square"></i>
+							</div>
+							<h3 class="h4">O Peça Já cuida do marketing pra você!</h3>
+							<p>Assim você pode se concentrar no que importa: fornecer um
+								serviço de qualidade do momento do pedido até a entrega do
+								produto.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-simple">
+							<div class="icon-outlined">
+								<i class="fa fa-file"></i>
+							</div>
+							<h3 class="h4">Cansado daquela papelada? Nós também!</h3>
+							<p>Com o Peça Já, todos os pedidos são processados
+								digitalmente e a papelada vira coisa do passado.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-simple">
+							<div class="icon-outlined">
+								<i class="fa fa-usd"></i>
+							</div>
+							<h3 class="h4">Experimente grátis e faça parte do Peça Já!</h3>
+							<p>Entre em contato e nossa equipe vai até você. O seu
+								cadastro é feito na hora e leva menos de 5 minutos!</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-simple">
+							<div class="icon-outlined">
+								<i class="fa fa-lock"></i>
+							</div>
+							<h3 class="h4">Nossa prioridade é a segurança do consumidor!</h3>
+							<p>Por isso, apoiamos integralmente o Programa Gás Legal e
+								trabalhamos somente com revendedores validados criteriosamente.
+								Fazer parte do Peça Já significa confiabilidade e garantia de um
+								serviço de qualidade.</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="box-simple">
+							<div class="icon-outlined">
+								<img th:src="@{/img/security.png}" alt="" class="img-fluid">
+							</div>
+							<h3 class="h4">Conforto e praticidade!</h3>
+							<p>Não precisa mais se preocupar. Com o Peça Já você compra
+								seus produtos diretamente do conforto de sua casa. com apenas
+								alguns cliques seu problema será resolvido. Você não vai até o
+								produto. O produto vem até você!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Section Form solicitação -->
+		<section id="form" class="bar no-mb text-md-left">
+			<div class="heading text-center">
+				<h2 th:text="#{titles.index.howwork}"></h2>
+
+			</div>
+			<div class="col-md-12 mx-auto">
+				<!-- Carousel Start-->
+				<div class="home-carousel">
+					<div class="dark-mask mask-primary"></div>
+					<div class="container">
+						<div class="homepage owl-carousel">
+							<div class="item">
+								<div class="row">
+									<div class="col-md-12 text-left">
+										<h1>Marketing</h1>
+										<p>Os consumidores conhecem o Peça Já através da TV, rádio
+											e Internet , baixam o aplicativo e escolhem a sua loja.</p>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+
+									<div class="col-md-12 text-left">
+										<h1>Pedidos</h1>
+										<p>VocÊ recebe os pedidos diretamente no seu computador, e
+											com eles, o endereço e forma de pagamento do seu novo
+											cliente.</p>
+									</div>
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									<div class="col-md-12 text-left">
+										<h1>Confirmação e Entrega</h1>
+										<p>Quando aceitar o pedido, você indica em quanto tempo a
+											entrega será efetuada. Agora é só entregar o produto!</p>
+									</div>
+
+								</div>
+							</div>
+							<div class="item">
+								<div class="row">
+									<div class="col-md-12 text-left">
+										<h1>Pronto!</h1>
+										<p>Assim que a entrega for concludia, você mesmo confima
+											no sistema. Pronto! Tudo feito em apenas 3 cliques.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Carousel End-->
+
+			</div>
+		</section>
+		<!-- Section Solicitação end -->
+
+	</div>
+
+	<!-- FOOTER -->
+	<footer class="main-footer">
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col-lg-3">
+					<h4 class="h6">Sobre Nós</h4>
+					<p>Uma equipe nova no mercado, mas que já vem conquistando todo
+						o publico. A equive é composta por tês analistas de sistemas do
+						IFRN.</p>
+				</div>
+				<div class="col-lg-3">
+					<h4 class="h6">Equipe</h4>
+					<ul class="list-unstyled footer-blog-list">
+						<li class="d-flex align-items-center">
+							<div class="image">
+								<img th:src="@{/img/claudio-rodrigo.jpg}" alt="..."
+									class="img-fluid">
+							</div>
+							<div class="text">
+								<h5 class="mb-0">
+									<a href="#">Claudio Rodrigo</a>
+								</h5>
+							</div>
+						</li>
+						<li class="d-flex align-items-center">
+							<div class="image">
+								<img th:src="@{/img/gerson-viana.jpg}" alt="..."
+									class="img-fluid">
+							</div>
+							<div class="text">
+								<h5 class="mb-0">
+									<a href="#">Gerson Viana</a>
+								</h5>
+							</div>
+						</li>
+						<li class="d-flex align-items-center">
+							<div class="image">
+								<img th:src="@{/img/vinicius-fernandes.jpg}" alt="..."
+									class="img-fluid">
+							</div>
+							<div class="text">
+								<h5 class="mb-0">
+									<a href="#">Vinicius Fernandes</a>
+								</h5>
+							</div>
+						</li>
+					</ul>
+					<hr class="d-block d-lg-none">
+				</div>
+				<div class="col-lg-3">
+					<h4 class="h6">Contatos</h4>
+					<p class="text-uppercase">
+						<strong>Ceres Inc.</strong><br>BR 405 <br>Pau dos
+						Ferros-RN <br>Brasil <br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="copyrights">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 text-center-md">
+						<p>&copy; 2017 - 2019. Ceres Inc. / Peça Já - água e gás</p>
+					</div>
+					<div class="col-lg-8 text-right text-center-md">
+						<p>
+							Template design by <a
+								href="https://bootstrapious.com/free-templates">Bootstrapious
+								Templates </a>
+						</p>
+						<!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer End -->
+
+	<!-- JavaScript files-->
+	<!-- ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+
+	<!-- jQuery -->
+	<script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+	<!-- Bootstrap -->
+	<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+	<!-- FastClick -->
+	<script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
+	<!-- NProgress -->
+	<script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+	<!-- Chart.js -->
+	<script th:src="@{/vendors/Chart.js/dist/Chart.min.js}"></script>
+	<!-- gauge.js -->
+	<script th:src="@{/vendors/gauge.js/dist/gauge.min.js}"></script>
+	<!-- bootstrap-progressbar -->
+	<script
+		th:src="@{/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js}"></script>
+	<!-- iCheck -->
+	<script th:src="@{/vendors/iCheck/icheck.min.js}"></script>
+	<!-- Skycons -->
+	<script th:src="@{/vendors/skycons/skycons.js}"></script>
+	<!-- Flot -->
+	<script th:src="@{/vendors/Flot/jquery.flot.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.pie.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.time.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.stack.js}"></script>
+	<script th:src="@{/vendors/Flot/jquery.flot.resize.js}"></script>
+	<!-- Flot plugins -->
+	<script th:src="@{/vendors/flot.orderbars/js/jquery.flot.orderBars.js}"></script>
+	<script th:src="@{/vendors/flot-spline/js/jquery.flot.spline.min.js}"></script>
+	<script th:src="@{/vendors/flot.curvedlines/curvedLines.js}"></script>
+	<!-- DateJS -->
+	<script th:src="@{/vendors/DateJS/build/date.js}"></script>
+	<!-- JQVMap -->
+	<script th:src="@{/vendors/jqvmap/dist/jquery.vmap.js}"></script>
+	<script th:src="@{/vendors/jqvmap/dist/maps/jquery.vmap.world.js}"></script>
+	<script
+		th:src="@{/vendors/jqvmap/examples/js/jquery.vmap.sampledata.js}"></script>
+	<!-- bootstrap-daterangepicker -->
+	<script th:src="@{/vendors/moment/min/moment.min.js}"></script>
+	<script
+		th:src="@{/vendors/bootstrap-daterangepicker/daterangepicker.js}"></script>
+
+	<script type="text/javascript">
+		$(document)
+				.ready(
+						function() {
+
+							$('#form-solicitacao')
+									.submit(
+											function(e) {
+												e.preventDefault();
+												$("#alert")
+														.html(
+																'<div class="load"> <i class="fa fa-spinner fa-pulse fa-3x fa-fw" style="color: #28a745;"></i><span class="sr-only">Loading...</span> </div>');
+												var formdata = {
+													nome : $("#firstname")
+															.val(),
+													email : $("#email").val(),
+													cnpj : $("#cnpj").val(),
+													telefone : $("#tel").val(),
+													mensagem : $("#message")
+															.val(),
+												}
+												$
+														.ajax({
+															type : 'POST',
+															contentType : "application/json",
+															url : '/solicitacoes/save',
+															data : JSON
+																	.stringify(formdata),
+															success : function(
+																	response) {
+																if (response == "200") {
+																	$('.load').hide();
+																	$("#alert")
+																			.html(
+																					'<div class="alert alert-success" role="alert">Solicitação efetuada com sucesso, Aguarde iremos analisar seu pedido e lhe mandar uma mensagem no Email.</div>');
+																}
+																if (response == "400") {
+																	$('.load').hide();
+																	$("#alert")
+																			.html(
+																					'<div class="alert alert-danger" role="alert">Houve algum erro interno. Aguarde iremos corrigir brevemente..</div>');
+																}
+																if (response == "401") {
+																	$('.load').hide();
+																	$("#alert")
+																			.html(
+																					'<div class="alert alert-danger" role="alert">CNPJ já registrado na base de dados do Peça já. Aguarde iremos lhe avaliar em breve</div>');
+																}
+																if (response == "402") {
+																	$('.load').hide();
+																	$("#alert")
+																			.html(
+																					'<div class="alert alert-danger" role="alert">CNPJ não registrado na Receita Federal</div>');
+																}
+																if (response == "408") {
+																	$('.load').hide();
+																	$("#alert")
+																			.html(
+																					'<div class="alert alert-danger" role="alert">Este email já esta em uso por outro usurio. Use outro Email!</div>');
+																}
+															},
+															error : function(
+																	response) {
+																$('.load').hide();
+																$("#alert")
+																		.html(
+																				'<div class="alert alert-danger" role="alert">Desculpe, serviço temporaraimente indisponível</div>');
+															}
+														});
+											});
+
+						});
+	</script>
+
+
+	<!-- validator -->
+	<script th:src="@{/vendors/validator/validator.js}"></script>
+
+	<script
+		th:src="@{/vendors/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js}"></script>
+
+	<script th:src="@{/js/mascara.min.js}"></script>
+
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/waypoints/lib/jquery.waypoints.min.js">
+		
+	</script>
+
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/jquery.counterup/jquery.counterup.min.js">
+		
+	</script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/js/jquery.parallax-1.1.3.js"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/js/front.js"></script>
+
+</body>
+</html>
+

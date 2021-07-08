@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://ultraq.net.nz/thymeleaf/layout">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Peça Já - água e gás! Baixe o App.</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+
+<!-- Favicon and apple touch icons-->
+<link rel="shortcut icon" th:href="@{/img/logo-peca-ja.png}"
+	type="image/x-icon" />
+
+<!-- Bootstrap CSS-->
+<link rel="stylesheet"
+	th:href="@{https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/bootstrap/css/bootstrap.min.css}" />
+
+<!-- Font Awesome -->
+<link th:href="@{/vendors/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet">
+
+<!-- Google fonts - Roboto-->
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" />
+
+<!-- Owl carousel-->
+<link rel="stylesheet"
+	href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel/assets/owl.carousel.css">
+<link rel="stylesheet"
+	href="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel/assets/owl.theme.default.css">
+
+<!-- Theme stylesheet-->
+<link rel="stylesheet" th:href="@{/css/style.default.css}"
+	id="theme-stylesheet" />
+
+<!-- Custom stylesheet - for your changes-->
+<link rel="stylesheet" th:href="@{/css/custom.css}" />
+</head>
+<body>
+
+	<div id="all">
+
+		<!-- Top bar-->
+		<div class="top-bar">
+			<div class="container">
+				<div class="row d-flex align-items-center">
+
+					<div class="col-md-6 d-md-block d-none">
+						<p>Entre em contato conosco +55 3378 0105 ou
+							contato@pecaja.com.</p>
+					</div>
+					<div class="col-md-6">
+						<div class="d-flex justify-content-md-end justify-content-between">
+							<ul class="list-inline contact-info d-block d-md-none">
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-phone"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-envelope"></i></a></li>
+							</ul>
+
+							<!-- Menu Login -->
+							<div class="login">
+								<a th:href="@{/home}" class="login-btn"><i
+									class="fa fa-sign-in"></i><span th:text="#{titles.login}"
+									class="d-none d-md-inline-block"></span> </a>
+							</div>
+							<!-- /Menu Login -->
+
+							<!-- Redes Sociais -->
+							<ul class="social-custom list-inline">
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-facebook"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-google-plus"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-twitter"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i
+										class="fa fa-envelope"></i></a></li>
+							</ul>
+							<!-- /Redes Sociais -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Top bar end-->
+
+		<!-- Navbar Start-->
+		<header class="nav-holder make-sticky">
+			<div id="navbar" role="navigation" class="navbar navbar-expand-lg">
+				<div class="container">
+
+					<!-- Logo -->
+					<a th:href="@{/}" class="navbar-brand home"><img
+						th:src="@{/img/logo.png}" alt="Logo Peça Já!"
+						class="d-none d-md-inline-block"><img
+						th:src="@{/img/logo.png}" alt="Logo Peça Já"
+						class="d-inline-block d-md-none"><span class="sr-only">Peça
+							Já - Ir para a Index</span></a>
+					<!-- Logo end -->
+
+					<button type="button" data-toggle="collapse"
+						data-target="#navigation"
+						class="navbar-toggler btn-template-outlined">
+						<span class="sr-only">Toggle navigation</span><i
+							class="fa fa-align-justify"></i>
+					</button>
+
+					<!-- Itens de Menu -->
+					<div id="navigation" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav ml-auto">
+
+							<!-- CONHEÇA O PEÇA JÁ -->
+							<li class="nav-item dropdown menu-large"><a th:href="@{/}">
+									Conheça o Peça Já<b class="caret"></b>
+							</a></li>
+							<!-- /CONHEÇA O PEÇA JÁ -->
+
+							<!-- REVENDEDORES -->
+							<li class="nav-item dropdown"><a
+								th:href="@{/indexRevendedores}"> <span
+									th:text="#{titles.index.menu.revended}"></span><b class="caret"></b>
+							</a></li>
+							<!-- /REVENDEDORES -->
+
+						</ul>
+					</div>
+					<!-- Itens de Menu end -->
+
+				</div>
+			</div>
+		</header>
+		<!-- Navbar End-->
+
+		<!-- Section Carousel Revendedor -->
+		<section
+			style="background: url('https://d19m59y37dris4.cloudfront.net/universal/2-0-1/img/photogrid.jpg') center center repeat; background-size: cover;"
+			class="bar background-white relative-positioned">
+			<div class="container">
+				<!-- Carousel Start-->
+				<div class="home-carousel">
+					<div class="dark-mask mask-primary"></div>
+					<div class="container">
+						<div class="homepage owl-carousel">
+
+							<div class="item">
+								<div class="row">
+									<div class="col-md-7 text-left">
+										<p>Cansado ligações sem respostas, perder tempo e dinheiro</p>
+										<h1>Baixe o app do Peça Já!</h1>
+										<ul class="list-unstyled">
+											<li>Seu Aplictivo de pedir gás e água</li>
+										</ul>
+										<a href="#saiba-mais" class="btn btn-template-outlined-white">Saiba
+											Mais</a>
+									</div>
+									<div class="col-md-5">
+										<img th:src="@{/img/banner.png}" alt="" class="img-fluid">
+									</div>
+
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- Carousel End-->
+			</div>
+		</section>
+		<!-- Section Carousel End -->
+
+		<!-- Section Carrousel Our Clients -->
+		<section class="bar">
+			<div class="container">
+				<div class="heading text-center">
+					<div class="row">
+						<hr style="width: 100%; height: 2px; background-color: #28a745">
+					</div>
+					<div class="col-md-11 text-center">
+						<h2 id="saiba-mais">Por que usar o Peca-Ja?</h2>
+						<div>
+							<p>O Peca-Ja é um aplicativo inovador para você que precisa
+								de água mineral ou botijão de gás. Somos parceiros de
+								revendedores confiáveis, e reunimos todas as informações
+								necessárias em um só lugar, tornando prática e rápida a sua
+								compra. Cada revendedor no Peca-Ja trabalha com um preço
+								definidos, e são avaliados pelos clientes, e você pode escolher
+								o melhor preço e melhor revendedor.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr style="width: 100%; height: 2px; background-color: #28a745">
+					<div class="col-md-11 text-center">
+						<h2>Como fazer um pedido de Gás ou de Água no Peca-Ja?</h2>
+						<div>
+							<p>É super fácil! Baixe o app no seu celular. Em seguida,
+								abra o aplicativo e faça o cadastro com seu endereço para
+								encontrar os revendedores de gás que atendem sua região. Daí é
+								só clicar na revenda de sua preferência. Pronto, seu pedido será
+								enviado para o revendedor em tempo real! Muito simples, né?.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<hr style="width: 100%; height: 2px; background-color: #28a745">
+					<div class="col-md-11 text-center">
+						<h2>Como Faço Pagamento do meu Pedido?</h2>
+						<div>
+							<p>Atualmente só trabalhamos com o pagamento diretamente para
+								o entregador. E não deixe de nos acompanhar, pois o Peça Já está
+								cada vez mais prático: logo logo você também poderá pagar com
+								cartão, pay pal e diretamente pelo app!</p>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	</section>
+	<!-- Section Carrousel Our Clients end -->
+
+	<!-- Section Download App -->
+	<section
+		style="background: url(https://d19m59y37dris4.cloudfront.net/universal/2-0-1/img/fixed-background-2.jpg) center top no-repeat; background-size: cover;"
+		class="bar no-mb color-white text-center bg-fixed relative-positioned">
+		<div class="dark-mask"></div>
+
+		<div class="container">
+			<div class="icon icon-outlined icon-lg">
+				<i class="fa fa-download"></i>
+			</div>
+			<h3 class="text-uppercase">O que ainda está esperando?</h3>
+			<p class="lead">Baixe já nosso aplicativo e não fique de fora
+				dessa.</p>
+			<p class="text-center">
+				<a th:href="@{/}" class="btn btn-template-outlined-white btn-lg"><span
+					th:text="#{index.download.app}"></span></a>
+			</p>
+		</div>
+	</section>
+	<!-- Section Download App end -->
+
+	</div>
+
+	<!-- FOOTER -->
+	<footer class="main-footer">
+		<div class="container">
+			<div class="row justify-content-md-center">
+				<div class="col-lg-3">
+					<h4 class="h6">Sobre Nós</h4>
+					<p>Uma equipe nova no mercado, mas que já vem conquistando todo
+						o publico. A equive é composta por tês analistas de sistemas do
+						IFRN.</p>
+				</div>
+				<div class="col-lg-3">
+					<h4 class="h6">Equipe</h4>
+					<ul class="list-unstyled footer-blog-list">
+						<li class="d-flex align-items-center">
+							<div class="image">
+								<img th:src="@{/img/claudio-rodrigo.jpg}" alt="..."
+									class="img-fluid">
+							</div>
+							<div class="text">
+								<h5 class="mb-0">
+									<a href="#">Claudio Rodrigo</a>
+								</h5>
+							</div>
+						</li>
+						<li class="d-flex align-items-center">
+							<div class="image">
+								<img th:src="@{/img/gerson-viana.jpg}" alt="..."
+									class="img-fluid">
+							</div>
+							<div class="text">
+								<h5 class="mb-0">
+									<a href="#">Gerson Viana</a>
+								</h5>
+							</div>
+						</li>
+						<li class="d-flex align-items-center">
+							<div class="image">
+								<img th:src="@{/img/vinicius-fernandes.jpg}" alt="..."
+									class="img-fluid">
+							</div>
+							<div class="text">
+								<h5 class="mb-0">
+									<a href="#">Vinicius Fernandes</a>
+								</h5>
+							</div>
+						</li>
+					</ul>
+					<hr class="d-block d-lg-none">
+				</div>
+				<div class="col-lg-3">
+					<h4 class="h6">Contatos</h4>
+					<p class="text-uppercase">
+						<strong>Ceres Inc.</strong><br>BR 405 <br>Pau dos
+						Ferros-RN <br>Brasil <br>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="copyrights">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 text-center-md">
+						<p>&copy; 2017 - 2019. Ceres Inc. / Peça Já - água e gás</p>
+					</div>
+					<div class="col-lg-8 text-right text-center-md">
+						<p>
+							Template design by <a
+								href="https://bootstrapious.com/free-templates">Bootstrapious
+								Templates </a>
+						</p>
+						<!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions. Thank you for understanding :)-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- Footer End -->
+
+
+	<!-- JavaScript files-->
+	<!-- ================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<!-- jQuery -->
+	<script th:src="@{/vendors/jquery/dist/jquery.min.js}"></script>
+	<!-- Bootstrap -->
+	<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+	<script th:src="@{/vendors/popper.js/umd/popper.min.js}"></script>
+	<script th:src="@{/js/grasp_mobile_progress_circle-1.0.0.min.js}"></script>
+	<script th:src="@{/vendors/jquery.cookie/jquery.cookie.js}"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/waypoints/lib/jquery.waypoints.min.js">
+		
+	</script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/jquery.counterup/jquery.counterup.min.js">
+		
+	</script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel/owl.carousel.min.js"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/owl.carousel2.thumbs/owl.carousel2.thumbs.min.js"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/js/jquery.parallax-1.1.3.js"></script>
+
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/vendor/jquery.scrollto/jquery.scrollTo.min.js"></script>
+	<script
+		src="https://d19m59y37dris4.cloudfront.net/universal/2-0-1/js/front.js"></script>
+
+</body>
+</html>
+

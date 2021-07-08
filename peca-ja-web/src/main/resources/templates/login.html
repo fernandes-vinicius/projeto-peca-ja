@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html layout:decorate="~{main}">
+<head>
+<meta charset="UTF-8">
+<title>Peça Já! - Login</title>
+</head>
+
+<body class="login">
+
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<section layout:fragment="content">
+
+		<div>
+			<a class="hiddenanchor" id="signup"></a> <a class="hiddenanchor"
+				id="signin"></a>
+
+			<div class="login_wrapper">
+				<div class="animate form login_form">
+					<section
+						style="box-shadow: 5px 10px #aaa;; background-color: white; border-radius: 20px; padding: 25px"
+						class="login_content">
+
+						<div th:if="${param.error}"
+							class="alert alert-danger alert-dismissible show" role="alert">
+							Usuário e/ou senha incorreto.
+							<button type="button" class="close" data-dismiss="alert"
+								aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="row">
+							<div class="alert  alert-success"
+								th:if="${ not #strings.isEmpty(mensagem)}">
+								<span th:text="${mensagem}"></span>
+							</div>
+						</div>
+
+						<form action="/login" method="post">
+							<h1>Entrar</h1>
+							<div>
+								<input name="username" type="text" class="form-control"
+									placeholder="Username" required />
+							</div>
+							<div>
+								<input name="password" type="password" class="form-control"
+									placeholder="Password" required />
+							</div>
+							<div>
+								<input value="Entrar" type="submit" class="btn btn-primary" />
+								<a class="reset_pass" th:href="@{/forgotPassword}">esqueceu sua senha?</a>
+							</div>
+
+							<div class="clearfix"></div>
+
+							<div class="separator">
+
+								<div class="clearfix"></div>
+								<br />
+
+								<div>
+									<h1>
+										<img th:src="@{/img/logo-login.png}"> Peça Já!
+									</h1>
+									<p>©2016 All Rights Reserved. Gentelella Alela! is a
+										Bootstrap 3 template. Privacy and Terms</p>
+								</div>
+							</div>
+						</form>
+					</section>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<th:block xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:fragment="end">
+
+		<!-- jQuery -->
+		<script th:src="@{/vendors/jquery/dist/jquery.min.js}">
+			
+		</script>
+		<!-- Bootstrap -->
+		<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+		<!-- FastClick -->
+
+		<!-- Custom Theme Scripts -->
+		<script th:src="@{/js/custom.min.js}"></script>
+
+		<script>
+			// 			$(document)
+			// 					.ready(
+			// 							function() {
+			// 								$("#esqueceuSenha")
+			// 										.click(
+			// 												function() {
+			// 													$("#formEsqueciSenha")
+			// 															.html(
+			// 																	"<input style='width: 278px; padding-left: 10px;border-left-width: 0px; margin-left: 20px;' name='email' type='email' class='form-control col-md-12' placeholder='email' required />");
+			// 												});
+			// 							});
+		</script>
+	</th:block>
+</body>
+</html>
+

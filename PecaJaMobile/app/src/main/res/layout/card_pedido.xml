@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/colorAccent"
+    app:cardUseCompatPadding="true">
+
+    <!-- Layout Lateral - Categoria -->
+    <LinearLayout
+        android:id="@+id/layout_categoria"
+        android:background="#000"
+        android:orientation="vertical"
+        android:layout_width="40dp"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_categoria"
+            android:text="NULO"
+            android:textAlignment="center"
+            android:textSize="15sp"
+            android:textStyle="bold|italic"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
+            android:gravity="center_vertical"
+            android:rotation="270"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <!-- End Layout Lateral - Categoria -->
+
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_marginLeft="45dp"
+        android:paddingLeft="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/layout_card_content_right"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <!-- Layout - Nome Fantasia -->
+            <LinearLayout
+                android:id="@+id/linear_fantasia"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <!-- TextView - Contador -->
+                <TextView
+                    android:id="@+id/tv_contador"
+                    android:text="0"
+                    android:textAlignment="textEnd"
+                    android:layout_gravity="right|end"
+                    android:gravity="right|end"
+                    android:textSize="10sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:id="@+id/tv_fantasia"
+                    android:text="NOME FANTASIA"
+                    android:textSize="15sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <!-- End Layout - Nome Fantasia -->
+
+            <!-- Layout - Marca -->
+            <LinearLayout
+                android:id="@+id/linear_marca"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_marca"
+                    android:text="Indefinido"
+                    android:textSize="10sp"
+                    android:textColor="@android:color/black"
+                    android:textStyle="italic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <!-- End Layout - Marca -->
+
+            <!-- Layout - Infos -->
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Layout - Data Pedido -->
+                    <RelativeLayout
+                        android:id="@+id/layout_data"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/linear_title_data"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_title_data"
+                                android:text="Data do pedido"
+                                android:textSize="12sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_data"
+                            android:layout_below="@+id/linear_title_data"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_data"
+                                android:text="dd/MM/yyyy"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <!-- End Layout - Data Pedido -->
+
+                    <!-- Layout - Estimativa -->
+                    <RelativeLayout
+                        android:id="@+id/layout_estimativa"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/linear_title_estimativa"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_title_estimativa"
+                                android:text="Estimativa"
+                                android:textSize="12sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_estimativa"
+                            android:layout_below="@+id/linear_title_estimativa"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_estimativa"
+                                android:text="INDEFINIDO"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <!-- End Layout - Estimativa -->
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!-- End Layout - Infos -->
+
+            <!-- Layout - Dvider -->
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/Divisor1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="#E7F2F4" />
+            </LinearLayout>
+            <!-- End Layout - Dvider -->
+
+            <!-- Layout - Status -->
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Layout - Entrega -->
+                    <RelativeLayout
+                        android:id="@+id/layout_entrega"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/linear_title_entrega"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_title_entrega"
+                                android:text="Entrega"
+                                android:textSize="12sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_entrega"
+                            android:layout_below="@+id/linear_title_entrega"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_entrega"
+                                android:text="00 min"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <!-- End Layout - Entrega -->
+
+                    <!-- Layout - Nota -->
+                    <RelativeLayout
+                        android:id="@+id/layout_nota"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/linear_title_nota"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_title_nota"
+                                android:text="Sua nota"
+                                android:textSize="12sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linear_nota"
+                            android:layout_below="@+id/linear_title_nota"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_nota"
+                                android:text="0,0 ✭"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <!-- End Layout - Nota -->
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!-- End Layout - Status -->
+
+            <!-- Layout - Dvider 2 -->
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:id="@+id/Divisor2"
+                    android:layout_width="fill_parent"
+                    android:layout_height="1dip"
+                    android:background="#E7F2F4" />
+            </LinearLayout>
+            <!-- End Layout - Dvider 2 -->
+
+            <!-- Layout - Total -->
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <!-- Layout - Title Total -->
+                    <RelativeLayout
+                        android:id="@+id/layout_title_total"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/linear_title_total"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_title_total"
+                                android:text="Total"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <!-- End Layout - Title Total -->
+
+                    <!-- Layout - Total -->
+                    <RelativeLayout
+                        android:id="@+id/layout_total"
+                        android:layout_alignParentRight="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:id="@+id/linear_total"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_total"
+                                android:text="R$ 00,00"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <!-- End Layout - Total -->
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!-- End Layout - Total -->
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

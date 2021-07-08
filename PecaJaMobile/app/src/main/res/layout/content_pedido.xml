@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".PedidoActivity"
+    tools:showIn="@layout/activity_pedido"
+    android:background="#e7f2f4">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Layout - Cabeçalho -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- CardView - Cabeçalho -->
+            <android.support.v7.widget.CardView
+                app:cardBackgroundColor="@color/colorAccent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:elevation="8dp"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0.0px"
+                android:clipToPadding="false"
+                android:clipChildren="false"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="0dp"
+                app:cardPreventCornerOverlap="false"
+                android:layout_marginBottom="8dp">
+
+                <!-- Linear Left - Categoria -->
+                <LinearLayout
+                    android:id="@+id/layout_categoria"
+                    android:background="#000"
+                    android:orientation="vertical"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tv_categoria"
+                        android:text="NULO"
+                        android:textAlignment="center"
+                        android:textSize="15sp"
+                        android:textStyle="bold|italic"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center_vertical"
+                        android:rotation="270"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+                <!-- End Linear Left - Categoria -->
+
+                <!-- Layout Content Cabecalho-->
+                <RelativeLayout
+                    android:padding="10dp"
+                    android:layout_marginLeft="40dp"
+                    android:paddingLeft="50dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/layout_card_content_right"
+                        android:layout_alignParentRight="true"
+                        android:orientation="vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <!-- Layout - Nome Fantasia -->
+                        <LinearLayout
+                            android:id="@+id/linear_fantasia"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_fantasia"
+                                android:text="NOME FANTASIA"
+                                android:textSize="15sp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <!-- End Layout - Nome Fantasia -->
+
+                        <!-- Layout - Content Infos -->
+                        <LinearLayout
+                            android:layout_marginTop="15dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <!-- Layout - Nota -->
+                                <RelativeLayout
+                                    android:id="@+id/layout_data"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_title_data"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_data"
+                                            android:text="Nota"
+                                            android:textSize="12sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_data"
+                                        android:layout_below="@+id/linear_title_data"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_nota"
+                                            android:text="0,0 ✭"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="18sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                                <!-- End Layout - Nota -->
+
+                                <!-- Layout - Previsão -->
+                                <RelativeLayout
+                                    android:id="@+id/layout_previsao"
+                                    android:layout_centerInParent="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_title_previsao"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_previsao"
+                                            android:text="Previsão"
+                                            android:textSize="12sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_previsao"
+                                        android:layout_below="@+id/linear_title_previsao"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_previsao"
+                                            android:text="-1 min"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="18sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                                <!-- End Layout - Previsão -->
+
+                                <!-- Layout - Preço -->
+                                <RelativeLayout
+                                    android:id="@+id/layout_preco"
+                                    android:layout_alignParentRight="true"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_title_preco"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_preco"
+                                            android:text="Preço"
+                                            android:textSize="12sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_preco"
+                                        android:layout_below="@+id/linear_title_preco"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_preco"
+                                            android:text="R$ 00,00"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="18sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                                <!-- End Layout - Preço -->
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+                        <!-- End Layout - Content Infos -->
+
+                        <!-- Layout - Dvider -->
+                        <LinearLayout
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dip"
+                                android:background="#E7F2F4" />
+                        </LinearLayout>
+                        <!-- End Layout - Dvider -->
+
+                        <!-- Layout - Content Marca -->
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <RelativeLayout
+                                android:paddingTop="5dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <!-- Layout - Marca -->
+                                <RelativeLayout
+                                    android:id="@+id/layout_marca"
+                                    android:layout_alignParentLeft="true"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content">
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_title_marca"
+                                        android:orientation="vertical"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_title_marca"
+                                            android:text="Marca"
+                                            android:textSize="12sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:id="@+id/linear_marca"
+                                        android:layout_below="@+id/linear_title_marca"
+                                        android:orientation="vertical"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content">
+
+                                        <TextView
+                                            android:id="@+id/tv_marca"
+                                            android:text="Liquigás"
+                                            android:textStyle="bold"
+                                            android:textColor="@android:color/black"
+                                            android:textSize="15sp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+                                    </LinearLayout>
+
+                                </RelativeLayout>
+                                <!-- End Layout - Nota -->
+
+                            </RelativeLayout>
+                        </LinearLayout>
+                        <!-- Layout - Content Marca -->
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <!-- End Layout Content Cabecalho-->
+
+            </android.support.v7.widget.CardView>
+            <!-- End CardView - Cabeçalho -->
+
+        </LinearLayout>
+        <!-- End Layout - Cabeçalho -->
+
+        <!-- Layout - Content Card Quantidade -->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:elevation="8dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="0.0px"
+            android:clipToPadding="false"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="5dp"
+            app:cardPreventCornerOverlap="false"
+            android:layout_marginBottom="8dp">
+
+            <!-- Linear Layout - Content Card -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- Content Produto Card -->
+                <LinearLayout
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Content -->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Content Left -->
+                        <RelativeLayout
+                            android:layout_alignParentLeft="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <LinearLayout
+                                android:orientation="vertical"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentTop="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <!-- Linear - Marca -->
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/tv_marca_card"
+                                        android:text="MARCA"
+                                        android:textSize="15sp"
+                                        android:textStyle="bold"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <!-- End Linear - Marca -->
+
+                                <!-- Linear - Peso -->
+                                <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/tv_peso"
+                                        android:text="Produto de 00Kg"
+                                        android:textSize="12sp"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <!-- End Linear - Peso -->
+
+                                <!-- Linear - Preço -->
+                                <LinearLayout
+                                    android:paddingTop="5dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content">
+
+                                    <TextView
+                                        android:id="@+id/tv_preco_card"
+                                        android:text="R$ 0,00 uni"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@android:color/black"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+                                <!-- End Linear - Preço -->
+
+                            </LinearLayout>
+
+                        </RelativeLayout>
+                        <!-- End Content Left -->
+
+                        <!-- Content Right -->
+                        <RelativeLayout
+                            android:layout_centerInParent="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_width="180dp"
+                            android:layout_height="wrap_content">
+
+                            <!-- Layout - Button Decrement -1 -->
+                            <RelativeLayout
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btn_decrement"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:paddingLeft="8dp"
+                                    android:pointerIcon="hand"
+                                    android:drawableLeft="@drawable/ic_exposure_neg_1_black_24dp"
+                                    android:background="@drawable/ripple_effect" />
+
+                            </RelativeLayout>
+                            <!-- End Layout - Button Decrement -1 -->
+
+                            <!-- Layout - Button Center Quantidade -->
+                            <RelativeLayout
+                                android:layout_centerInParent="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btn_quantidade"
+                                    android:layout_width="70dp"
+                                    android:layout_height="70dp"
+                                    android:text="0"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="20sp"
+                                    android:pointerIcon="hand"
+                                    android:background="@drawable/button_press" />
+
+                            </RelativeLayout>
+                            <!-- End Layout - Center Quantidade -->
+
+                            <!-- Layout - Button Increment +1 -->
+                            <RelativeLayout
+                                android:layout_centerInParent="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/btn_increment"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:paddingLeft="8dp"
+                                    android:pointerIcon="hand"
+                                    android:drawableLeft="@drawable/ic_exposure_plus_1_black_24dp"
+                                    android:background="@drawable/ripple_effect" />
+
+                            </RelativeLayout>
+                            <!-- End Layout - Button Increment +1 -->
+
+                        </RelativeLayout>
+                        <!-- End Content Right -->
+
+                    </RelativeLayout>
+                    <!-- End Content -->
+
+                </LinearLayout>
+                <!-- End Content Produto Card -->
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- Layout - Dvider -->
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <View
+                            android:id="@+id/Divisor1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="1dip"
+                            android:background="#E7F2F4" />
+                    </LinearLayout>
+                    <!-- End Layout - Dvider -->
+
+                </LinearLayout>
+
+                <!-- Layout - Total -->
+                <LinearLayout
+                    android:padding="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:layout_alignParentLeft="true"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:text="Total"
+                                android:textStyle="bold"
+                                android:textSize="15sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_alignParentRight="true"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_total"
+                                android:text="R$ 0,00"
+                                android:textStyle="bold"
+                                android:textColor="@android:color/black"
+                                android:textSize="18sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+                <!-- End Layout - Title Total -->
+
+            </LinearLayout>
+            <!-- End Linear Layout - Content Card -->
+
+        </android.support.v7.widget.CardView>
+        <!-- End Layout - Content Card Quantidade -->
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

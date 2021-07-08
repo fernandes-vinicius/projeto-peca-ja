@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html layout:decorate="~{template}">
+<head>
+<meta charset="UTF-8">
+<title>Peça Já! - Perfil</title>
+</head>
+<body>
+
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<section layout:fragment="content">
+
+		<!-- Breadcrumb -->
+		<div class="breadcrumb-holder">
+			<div class="">
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a href="/">Home</a></li>
+					<li class="breadcrumb-item active">Perfil</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<!-- page content -->
+			<div role="main">
+				<div class="">
+					<div class="page-title">
+						<div class="title_left">
+							<h3>Perfil do Usuário</h3>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+
+					<!-- 					INICIO DO FORM -->
+					<form th:action="@{/perfil/save}" th:object="${user}" method="POST"
+						enctype="multipart/form-data">
+
+						<!--Inputs responsáveis por guardar informações que não mudam do user que n-->
+						<input id="id" name="id" type="hidden" th:field="*{id}"
+							th:value="*{id}"> <input id="endereco" type="hidden"
+							th:field="*{endereco}" th:value="*{endereco}"> <input
+							id="situacao" type="hidden" th:field="*{situacao}"
+							th:value="*{situacao}"> <input id="status" type="hidden"
+							th:field="*{status}" th:value="*{status}"> <input
+							id="roles" type="hidden" th:field="*{roles}" th:value="*{roles}">
+						<input id="email" type="hidden" th:field="*{email}"
+							th:value="*{email}"> <input id="cnpj" type="hidden"
+							th:field="*{cnpj}" th:value="*{cnpj}"> <input id="nome"
+							type="hidden" th:field="*{nome}" th:value="*{nome}"> <input
+							id="" type="hidden" th:field="*{natureza_juridica}"
+							th:value="*{natureza_juridica}">
+
+
+						<div class="row">
+							<div class="alert  alert-success"
+								th:if="${ not #strings.isEmpty(mensagem)}">
+								<span th:text="${mensagem}"></span>
+							</div>
+							<div class="alert  alert-error"
+								th:if="${ not #strings.isEmpty(mensagemErro)}">
+								<span th:text="${mensagemErro}"></span>
+							</div>
+							<div class="col-md-12 col-sm-12 col-xs-12">
+								<div class="x_panel">
+									<div class="x_title">
+										<h2>Informações do usuário</h2>
+										<ul class="nav navbar-right panel_toolbox">
+											<li><a class="collapse-link"><i
+													class="fa fa-chevron-up"></i></a></li>
+											<li class="dropdown"><a href="#" class="dropdown-toggle"
+												data-toggle="dropdown" role="button" aria-expanded="false">
+										</ul>
+										<div class="clearfix"></div>
+									</div>
+
+									<div class="x_content">
+										<div class="col-md-3 col-sm-3 col-xs-12 profile_left">
+
+											<div class="profile_img" th:if="${user.imagem}">
+												<div id="crop-avatar">
+													<img class="img-responsive avatar-view" id="fotopreview"
+														th:src="@{/perfil/image/{image_id}(image_id=${user.id})}"
+														alt="Avatar" title="Mudar a foto"
+														style="width: 200px; height: 300px">
+
+												</div>
+											</div>
+											<div class="profile_img" th:unless="${user.imagem}">
+												<div id="crop-avatar">
+													<img class="img-responsive avatar-view" id="fotopreview"
+														th:src="@{/img/user.png}" alt="Avatar"
+														title="Mudar a foto" style="width: 200px; height: 300px">
+												</div>
+											</div>
+
+											<br />
+											<h3 th:text="${user.username}">Claudio Rodrigo</h3>
+											<ul class="list-unstyled user_data">
+												<li>
+												<li class="fa fa-map-marker user-profile-icon"></li>
+												<a
+													th:text="' ' + ${user.endereco.cidade.nome} + ', ' + ${user.endereco.estado.uf}"
+													href="" target="blank"></a>
+												</li>
+
+												<li><i class="fa fa-briefcase user-profile-icon"></i><a
+													th:text="' ' + ${user.cnpj}" href="" target="blank"></a></li>
+
+												<li class="m-top-xs"><i
+													class="fa fa-external-link user-profile-icon"></i> <a
+													href="http://www.google.com.br/" target="_blank"
+													th:text="' ' + ${user.email}"></a></li>
+											</ul>
+
+											<button class="btn btn-success">
+												<i class="fa fa-edit m-right-xs"></i>Editar perfil
+											</button>
+											<br />
+										</div>
+										<div class="col-md-9 col-sm-9 col-xs-12">
+
+											<div class="profile_title">
+												<div class="col-md-6">
+													<h2>Estatisticas da empresa</h2>
+												</div>
+											</div>
+											<!-- start skills -->
+											<br />
+											<ul class="list-unstyled user_data">
+												<li>
+													<p>Pedidos entregues</p>
+													<div class="row">
+														<div class="col-md-11">
+															<div class="progress progress_sm">
+																<div class="progress-bar bg-green" role="progressbar"
+																	data-transitiongoal="80"
+																	title="Você entregou 80% dos seus pedidos"></div>
+															</div>
+														</div>
+														<div class="col-md-1">
+															<label>80%</label>
+														</div>
+													</div>
+												</li>
+												<li>
+													<p>Pedidos Rejeitados</p>
+													<div class="row">
+														<div class="col-md-11">
+															<div class="progress progress_sm">
+																<div class="progress-bar bg-green" role="progressbar"
+																	data-transitiongoal="100"></div>
+															</div>
+														</div>
+														<div class="col-md-1">
+															<label>100%</label>
+														</div>
+													</div>
+												</li>
+												<li>
+													<p>Pedidos Cancelados</p>
+													<div class="row">
+														<div class="col-md-11">
+															<div class="progress progress_sm">
+																<div class="progress-bar bg-green" role="progressbar"
+																	data-transitiongoal="30"></div>
+															</div>
+														</div>
+														<div class="col-md-1">
+															<label>30%</label>
+														</div>
+													</div>
+												</li>
+											</ul>
+											<!-- end of skills -->
+											<br />
+											<div class="" role="tabpanel"
+												data-example-id="togglable-tabs">
+												<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+													<li role="presentation" class="active"><a
+														href="#tab_content1" id="home-tab" role="tab"
+														data-toggle="tab" aria-expanded="true">Informações
+															Básicas</a></li>
+													<li role="presentation" class=""><a
+														href="#tab_content2" role="tab" id="profile-tab"
+														data-toggle="tab" aria-expanded="false">Dados da
+															empresa</a></li>
+													<li role="presentation" class=""><a
+														href="#tab_content3" role="tab" id="profile-tab"
+														data-toggle="tab" aria-expanded="false">Privacidade</a></li>
+												</ul>
+												<div id="myTabContent" class="tab-content">
+													<div role="tabpanel" class="tab-pane fade active in"
+														id="tab_content1" aria-labelledby="home-tab">
+
+														<!-- start form info básicas -->
+														<div class="form-group">
+															<label for="usr">Nome de usuário:</label> <input
+																type="text" class="form-control" id="usr"
+																th:value="${user.username}" th:field="${user.username}">
+															<small>Lembre-se!! este é nome no qual você fará
+																login no sistema</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Email</label> <input type="text"
+																disabled="disabled" class="form-control" id="usr"
+																th:value="${user.email}"> <small>Endereço
+																de email no qual entraremos em contao com você quando
+																necessário</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Telefone</label> <input type="text"
+																class="form-control" id="usr"
+																th:value="${user.telefone}" th:field="${user.telefone}">
+															<small>Informe seu telefone pessoal ou da empresa</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Imagem do perfil</label> <input
+																type="file" class="form-control" id="uploadfoto"
+																name="uploadfile"> <small>Escolha sua
+																imagem preferida para pôr no perfil</small>
+														</div>
+
+														<!-- end form info básicas -->
+
+													</div>
+													<div role="tabpanel" class="tab-pane fade"
+														id="tab_content2" aria-labelledby="profile-tab">
+														<div class="form-group">
+															<label for="usr">Nome da empresa</label> <input
+																type="text" class="form-control" th:value=${user.nome}
+																disabled="disabled"> <small>Nome
+																principal da empresa</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">CNPJ</label> <input type="text"
+																class="form-control" th:value=${user.cnpj}
+																disabled="disabled"> <small>CNPJ da
+																empresa</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Natureza juridica</label> <input
+																type="text" class="form-control"
+																th:value="${user.natureza_juridica}" disabled="disabled">
+															<small>Natureza juridica da empresa</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Nome fantasia</label> <input type="text"
+																class="form-control" th:field="${user.fantasia}"
+																th:value=${user.fantasia}> <small>Nome
+																popularmente conhecido da empresa</small>
+														</div>
+
+														<div class="form-group">
+															<label for="usr">Cidade</label> <input type="text"
+																class="form-control"
+																th:value=${user.endereco.cidade.nome}
+																disabled="disabled"> <small>Endereço da
+																empresa</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Estado</label> <input type="text"
+																disabled="disabled" class="form-control"
+																th:value=${user.endereco.estado.uf}> <small>UF
+																da empresa</small>
+														</div>
+
+														<div class="form-group">
+															<label for="comment">Atividade principal</label>
+															<textarea class="form-control" rows="5" id="comment"
+																th:field="${user.atividade_principal}"
+																th:value="atividade_principal"></textarea>
+														</div>
+													</div>
+													<div role="tabpanel" class="tab-pane fade"
+														id="tab_content3" aria-labelledby="profile-tab">
+
+														<div class="form-group">
+															<label for="usr">Senha atual</label> <input
+																type="password" class="form-control"
+																th:field="${user.password}"> <small>Digite
+																sua senha atual para poder por muda-la logo abaixo</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Informe sua nova senha</label> <input
+																type="password" class="form-control" name="novaSenha">
+															<small>Digite sua nova senha para poder entrar no
+																sistema</small>
+														</div>
+														<div class="form-group">
+															<label for="usr">Confirmar nova senha</label> <input
+																type="password" class="form-control"
+																name="confirmeSenha"> <small>Confirme
+																sua sua nova senha para poder entrar no sistema</small>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- /page content -->
+		</div>
+	</section>
+</body>
+
+<th:block xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:fragment="end">
+
+	<!-- jQuery -->
+	<script th:src="@{/vendors/jquery/dist/jquery.min.js}">
+		
+	</script>
+	<!-- Bootstrap -->
+	<script th:src="@{/vendors/bootstrap/dist/js/bootstrap.min.js}"></script>
+	<!-- FastClick -->
+	<script th:src="@{/vendors/fastclick/lib/fastclick.js}"></script>
+	<!-- NProgress -->
+	<script th:src="@{/vendors/nprogress/nprogress.js}"></script>
+	<!-- Chart.js -->
+	<script th:src="@{/vendors/Chart.js/dist/Chart.min.js}"></script>
+	<!-- gauge.js -->
+	<script th:src="@{/vendors/gauge.js/dist/gauge.min.js}"></script>
+	<!-- Morris.js -->
+	<script th:src="@{/vendors/morris.js/morris.min.js}"></script>
+	<!-- Rapahel.js -->
+	<script th:src="@{/vendors/raphael/raphael.min.js}"></script>
+	<!-- bootstrap-progressbar -->
+	<script
+		th:src="@{/vendors/bootstrap-progressbar/bootstrap-progressbar.min.js}"></script>
+	<!-- iCheck -->
+	<script th:src="@{/vendors/iCheck/icheck.min.js}"></script>
+	<!-- Skycons -->
+	<script th:src="@{/vendors/skycons/skycons.js}"></script>
+	<!-- Custom Theme Scripts -->
+	<script th:src="@{/js/custom.min.js}"></script>
+
+	<script type="text/javascript">
+		$(document)
+				.ready(
+						function() {
+
+							//script para mudar foto do perfil
+							var uploadfoto = document
+									.getElementById('uploadfoto');
+							var fotopreview = document
+									.getElementById('fotopreview');
+
+							uploadfoto.addEventListener('change', function(e) {
+								showThumbnail(this.files);
+							});
+
+							function showThumbnail(files) {
+								if (files && files[0]) {
+									var reader = new FileReader();
+
+									reader.onload = function(e) {
+										fotopreview.src = e.target.result;
+									}
+
+									reader.readAsDataURL(files[0]);
+								}
+							}
+							//End script foto
+						});
+	</script>
+
+</th:block>
+<!-- END fragment scripts -->
+
+</html>
+

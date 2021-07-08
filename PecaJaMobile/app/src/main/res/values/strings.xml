@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Peça Já</string>
+    <string name="action_feedback">Avalie-nos</string>
+    <string name="action_history">Histórico</string>
+    <string name="action_filter_by_melhor_avaliacao">Melhor Avaliação</string>
+    <string name="action_filter_by_mais_rapido">Mais rápido</string>
+    <string name="action_filter_by_mais_barato">Mais Barato</string>
+    <string name="action_logout">Sair</string>
+    <string name="action_home">Home</string>
+    <string name="hint_nome">Nome</string>
+    <string name="hint_cpf">CPF</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_username">Usuário</string>
+    <string name="hint_confirm_password">Confirmar Senha</string>
+    <string name="hint_password">Senha</string>
+    <string name="btn_sign_in">Entrar</string>
+    <string name="err_msg_name">Entre com seu usuário</string>
+    <string name="err_msg_username">Entre com um usuário válido</string>
+    <string name="err_msg_password">Entre com sua senha</string>
+    <string name="title_activity_main">Faça seu pedido</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_register">Criar Conta</string>
+    <string name="link_cancel_pedido"><a href="#">Cancelar pedido!</a></string>
+
+    <!-- Erros -->
+    <string name="service_not_available">serviço não disponível</string>
+    <string name="invalid_lat_long_used">lat inválido usado por muito tempo</string>
+    <string name="no_address_found">nenhum endereço encontrado</string>
+    <string name="address_found">endereço encontrado</string>
+
+    <!-- Strings related to login -->
+    <string name="link_register"><a href="#">Criar nova conta!</a></string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+
+    <!-- Strings related to MainActivity -->
+    <string name="text_header">Revendededores disponíveis em:</string>
+    <string name="text_radio_button_agua">Água</string>
+    <string name="text_radio_button_gas">Gás</string>
+    <string name="text_button_mudar_endereco">Mudar</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Peça Já! água e gás</string>
+    <string name="nav_header_subtitle">equipepecaja@gmail.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_historico_pedido">Seus Pedidos</string>
+    <string name="title_activity_pedido">Selecionar quantidade</string>
+    <string name="title_activity_success">Pedido Concluído</string>
+    <string name="title_activity_profile">Seu Perfil</string>
+    <string name="title_activity_finalizar_pedido">Finalizar Pedido</string>
+    <string name="title_activity_editar_perfil">Editar Perfil</string>
+</resources>

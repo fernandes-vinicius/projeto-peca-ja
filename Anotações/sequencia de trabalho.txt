@@ -1,0 +1,12 @@
+
+	CORPORATIVOS				TESTE
+						
+colocar justificativa                   |
+Casos de uso				|	casos de teste
+	descricao de casos de uso	|	plano de testes
+	diagrama sequencia		|
+diagrama de atividades   		|
+dominio e classes 			|
+banco de dados (pé de galinha)		|
+	script de criação obs: anexo
+Processo de Desenvolvimento		|

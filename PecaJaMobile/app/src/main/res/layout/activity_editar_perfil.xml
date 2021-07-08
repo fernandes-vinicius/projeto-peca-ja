@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".EditarPerfilActivity"
+    android:background="@color/colorBackground">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_editar_perfil" />
+
+    <Button
+        android:id="@+id/btn_mudar_endereco"
+        android:layout_width="300dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textSize="18sp"
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="Salvar alterações"
+        android:textAllCaps="false"
+        android:textAlignment="center"
+        android:pointerIcon="hand"
+        android:drawableLeft="@drawable/ic_done_white_24dp"
+        android:background="@drawable/button_press"
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/white"/>
+
+</android.support.design.widget.CoordinatorLayout>

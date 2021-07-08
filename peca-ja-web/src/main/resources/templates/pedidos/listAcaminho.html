@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html layout:decorate="~{template}">
+<head>
+<meta charset="UTF-8">
+<title>Peça Já! - Pedidos a caminhox</title>
+</head>
+<body>
+
+	<!-- /* Content of this page will be decorated by the elements of layout.html (task/layout) */ -->
+	<section layout:fragment="content">
+
+		<!-- Breadcrumb -->
+		<div class="breadcrumb-holder">
+			<div class="">
+				<ul class="breadcrumb">
+					<li class="breadcrumb-item"><a th:href="@{/home}">Home</a></li>
+					<li class="breadcrumb-item active">Pedidos a caminho</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+
+			<div class="row">
+				<div class="alert  alert-success"
+					th:if="${ not #strings.isEmpty(mensagem)}">
+					<span th:text="${mensagem}"></span>
+				</div>
+				<div class="alert  alert-error"
+					th:if="${ not #strings.isEmpty(mensagemErro)}">
+					<span th:text="${mensagemErro}"></span>
+				</div>
+			</div>
+
+			<div class="page-title">
+				<div class="title_left">
+					<h3>Pedidos a caminho</h3>
+				</div>
+			</div>
+
+			<div class="clearfix"></div>
+
+
+			<div class="row">
+				<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="x_panel">
+
+						<div class="x_title">
+							<h2>Pedidos aguardando confirmação de entrega</h2>
+							<ul class="nav navbar-right panel_toolbox">
+								<li><a class="collapse-link"><i
+										class="fa fa-chevron-up"></i></a></li>
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+
+						<div class="x_content">
+							<br/>
+
+							<div class="row">
+
+								<div th:if="${#lists.isEmpty(pedidos)}" align="center">
+									<h2>Não há pedidos a caminho no momento</h2>
+								</div>
+
+								<div th:each="pedido : ${pedidos}">
+
+									<div class="col-md-4 col-sm-8 col-xs-12 profile_details">
+										<div class="well profile_view">
+											<div class="col-sm-12">
+												<h4 class="brief">
+													<div class="col-sm-6">
+														<strong><i>ID Pedido <i
+																th:text=${pedido.id}></i></i></strong>
+													</div>
+													<div class="col-sm-6">
+														<i class="fa fa-clock-o"></i><strong> 3 Minutos</strong>
+													</div>
+												</h4>
+
+												<div class="left col-xs-7">
+													<ul class="list-unstyled">
+														<strong><li>Cliente:</li></strong>
+														<p th:text=${pedido.cliente.nome}></p>
+													</ul>
+													<ul class="list-unstyled">
+														<strong><li>Pediu:</li></strong>
+														<p class="ratings">
+															<small th:text=${pedido.quantidade}></small> <small
+																th:text=${pedido.produto.categoria.nome}></small>
+														</p>
+													</ul>
+													<ul class="list-unstyled">
+														<p class="ratings">
+															<i class="fa fa-map-marker"></i> <small>Rua teste
+																do gás</small>
+														</p>
+													</ul>
+
+
+												</div>
+												<div class="right col-xs-5 text-center">
+													<img th:src="@{/img/delivery.png}" alt=""
+														class="img-circle img-responsive">
+												</div>
+
+											</div>
+											<div class="col-xs-12 bottom text-center">
+												<div class="col-xs-12 col-sm-12 emphasis">
+													<p class="ratings">
+														<strong>Avaliações</strong> <a>4.0</a> <a href="#"><span
+															class="fa fa-star"></span></a> <a href="#"><span
+															class="fa fa-star"></span></a> <a href="#"><span
+															class="fa fa-star"></span></a> <a href="#"><span
+															class="fa fa-star"></span></a> <a href="#"><span
+															class="fa fa-star-o"></span></a>
+													</p>
+												</div>
+
+												</br> </br> <a id="confirme"
+													th:href="@{/pedidos/entregar/{id}/(id=${pedido.id})}"
+													class="btn btn-success btn-sm"
+													title="Clique aqui para completar a entrega do pedido">
+													<i class="fa fa-check"></i> Confirmar entrega
+												</a> <a
+													th:href="@{/pedidos/cancelarEntrega/{id}/(id=${pedido.id})}"
+													class="btn btn btn-info btn-sm"
+													title="Clique aqui para cancelar a entrega do pedido">
+													<i class="fa fa-remove"></i> Cancelar entrega
+												</a>
+												</a> <a
+													th:href="@{/pedidos/formRejeitarPedido/{id}/(id=${pedido.id})}"
+													class="btn btn-danger btn-sm"
+													title="Clique aqui para rejeitar esse pedido">
+													<i class="fa fa-remove"></i> Rejeitar Pedido
+												</a>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- End Content -->
+
+</body>
+</html>
